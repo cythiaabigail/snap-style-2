@@ -13,6 +13,7 @@
 		C07679FA2A4ABB5400CEE111 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C07679F92A4ABB5400CEE111 /* Preview Assets.xcassets */; };
 		C07679FC2A4ABB5400CEE111 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07679FB2A4ABB5400CEE111 /* Persistence.swift */; };
 		C07679FF2A4ABB5400CEE111 /* snap_style.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C07679FD2A4ABB5400CEE111 /* snap_style.xcdatamodeld */; };
+		C0835D722A4ACA4400D0DA96 /* DummyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0835D712A4ACA4400D0DA96 /* DummyComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		C07679F92A4ABB5400CEE111 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C07679FB2A4ABB5400CEE111 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C07679FE2A4ABB5400CEE111 /* snap_style.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = snap_style.xcdatamodel; sourceTree = "<group>"; };
+		C0835D712A4ACA4400D0DA96 /* DummyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		C0767A082A4ABC5F00CEE111 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C0835D712A4ACA4400D0DA96 /* DummyComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0835D722A4ACA4400D0DA96 /* DummyComponent.swift in Sources */,
 				C07679FC2A4ABB5400CEE111 /* Persistence.swift in Sources */,
 				C07679FF2A4ABB5400CEE111 /* snap_style.xcdatamodeld in Sources */,
 				C07679F52A4ABB5300CEE111 /* ContentView.swift in Sources */,
