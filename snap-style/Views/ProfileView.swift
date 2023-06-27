@@ -142,8 +142,10 @@ struct ProfileView: View {
                                     .cornerRadius(12.0)
                                     .opacity(0.5)
                             }.padding()
+                                .padding(.bottom,100)
                         }
                         .background(Color("secondary"))
+                        
                     }
                     
                     Spacer()
@@ -166,6 +168,7 @@ struct ProfileView: View {
             }
         }
         .background(Color("primary"))
+        .ignoresSafeArea()
             
         }
     }
