@@ -109,6 +109,9 @@ struct RecommendationView: View {
                     .background(Color.black)
             }
         }
+        .sheet(isPresented: $isClothClicked) {
+            RecommendationBottomSheetView(isPreviewShowed: $isClothClicked)
+        }
     }
 }
 

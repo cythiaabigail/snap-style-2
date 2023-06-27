@@ -8,18 +8,27 @@
 import SwiftUI
 
 struct RecommendationBottomSheetView: View {
+    
+    @Binding var isPreviewShowed: Bool
+    
     var body: some View {
         ZStack {
             Color("secondary")
                 .ignoresSafeArea()
             VStack {
                 HStack {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 25))
+                    Button {
+                        isPreviewShowed.toggle()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 25))
+                    }
+                    .foregroundColor(Color("primary"))
                     Spacer()
                     Image(systemName: "heart")
                         .font(.system(size: 25))
                 }
+                .padding(.top, 20)
                 .padding(.horizontal, 30)
                 Spacer().frame(height: 10)
                 Image("recommendation_preview_example")
@@ -68,6 +77,6 @@ struct RecommendationBottomSheetView: View {
 
 struct RecommendationBottomSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        RecommendationBottomSheetView()
+        RecommendationBottomSheetView(isPreviewShowed: .constant(false))
     }
 }
