@@ -19,6 +19,7 @@ struct TabViewComponents: View {
                 Label("", systemImage: "person")
             }
         }.tint(Color("yellow"))
+            .navigationBarBackButtonHidden(true)
     }
 }
 

@@ -34,7 +34,7 @@ struct RecommendationView: View {
     
     var body: some View {
         GeometryReader { screenSize in
-            NavigationStack {
+//            NavigationStack {
                 VStack {
                     HStack {
                         Text("Styles For You").font(.system(.largeTitle, weight: .bold)).foregroundColor(Color("secondary"))
@@ -107,7 +107,7 @@ struct RecommendationView: View {
                         .padding(.horizontal, -14)
                 }.padding(.horizontal, 14).padding(.top, 20)
                     .background(Color.black)
-            }
+//            }.navigationBarBackButtonHidden(true)
         }
         .sheet(isPresented: $isClothClicked) {
             RecommendationBottomSheetView(isPreviewShowed: $isClothClicked)

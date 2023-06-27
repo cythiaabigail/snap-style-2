@@ -18,7 +18,9 @@ struct ContentView: View {
 
     @State  var increment: Int = 0
     var body: some View {
-        TabViewComponents()
+        NavigationStack {
+            OnBoardingView()
+        }
 //        NavigationView {
 //            List {
 //                ForEach(items) { item in

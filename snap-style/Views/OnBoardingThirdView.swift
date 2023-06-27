@@ -102,14 +102,20 @@ struct OnBoardingThirdView: View {
                             )
                     }.padding()
                     
-                    Button(action: {}){
-                        Text("Next")
+                    NavigationLink (destination: TabViewComponents()) {
+                        Text("Finish")
                             .padding()
                             .frame(maxWidth: .infinity, alignment:.center)
                             .background(Color("secondary"))
                             .foregroundColor(Color("primary"))
                             .cornerRadius(12.0)
-                    }.padding()
+                    }
+                    
+//                    Button(action: {
+//
+//                    }){
+//
+//                    }.padding()
                 }
                 
             }
