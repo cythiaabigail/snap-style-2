@@ -15,7 +15,7 @@ struct TabViewComponents: View {
                 Label("", systemImage: "house")
             }
             //example
-            ContentView().tabItem {
+            ProfileView().tabItem {
                 Label("", systemImage: "person")
             }
         }.tint(Color("yellow"))
