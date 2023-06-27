@@ -12,6 +12,11 @@
 		77427F1D2A4AC1AC0064DA28 /* OnBoardingSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F1C2A4AC1AC0064DA28 /* OnBoardingSecondView.swift */; };
 		77427F1F2A4AC1BA0064DA28 /* OnBoardingThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F1E2A4AC1BA0064DA28 /* OnBoardingThirdView.swift */; };
 		77427F212A4AC1CD0064DA28 /* OnBoardingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F202A4AC1CD0064DA28 /* OnBoardingExtensions.swift */; };
+		6A1D54222A4ACB7E00F1A0B7 /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54212A4ACB7E00F1A0B7 /* RecommendationView.swift */; };
+		6A1D54242A4ACBC400F1A0B7 /* TabViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54232A4ACBC400F1A0B7 /* TabViewComponents.swift */; };
+		6A1D54262A4ACBEB00F1A0B7 /* RecommendationPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54252A4ACBEB00F1A0B7 /* RecommendationPickerComponent.swift */; };
+		6A1D54282A4AD01500F1A0B7 /* ClothesStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54272A4AD01500F1A0B7 /* ClothesStyle.swift */; };
+		6A1D542A2A4AD0C900F1A0B7 /* BodyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54292A4AD0C900F1A0B7 /* BodyShape.swift */; };
 		C07679F32A4ABB5300CEE111 /* SnapStyleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07679F22A4ABB5300CEE111 /* SnapStyleApp.swift */; };
 		C07679F52A4ABB5300CEE111 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07679F42A4ABB5300CEE111 /* ContentView.swift */; };
 		C07679F72A4ABB5400CEE111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C07679F62A4ABB5400CEE111 /* Assets.xcassets */; };
@@ -20,6 +25,7 @@
 		C07679FF2A4ABB5400CEE111 /* snap_style.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C07679FD2A4ABB5400CEE111 /* snap_style.xcdatamodeld */; };
 		C0767A0A2A4AC22E00CEE111 /* ScanResultBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0767A092A4AC22E00CEE111 /* ScanResultBottomSheetView.swift */; };
 		C0767A0C2A4AC2A300CEE111 /* ScanResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0767A0B2A4AC2A300CEE111 /* ScanResultView.swift */; };
+		C0835D722A4ACA4400D0DA96 /* DummyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0835D712A4ACA4400D0DA96 /* DummyComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,11 @@
 		77427F1C2A4AC1AC0064DA28 /* OnBoardingSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingSecondView.swift; path = "snap-style/Views/OnBoardingSecondView.swift"; sourceTree = SOURCE_ROOT; };
 		77427F1E2A4AC1BA0064DA28 /* OnBoardingThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingThirdView.swift; path = "snap-style/Views/OnBoardingThirdView.swift"; sourceTree = SOURCE_ROOT; };
 		77427F202A4AC1CD0064DA28 /* OnBoardingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingExtensions.swift; path = "snap-style/Views/OnBoardingExtensions.swift"; sourceTree = SOURCE_ROOT; };
+		6A1D54212A4ACB7E00F1A0B7 /* RecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
+		6A1D54232A4ACBC400F1A0B7 /* TabViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewComponents.swift; sourceTree = "<group>"; };
+		6A1D54252A4ACBEB00F1A0B7 /* RecommendationPickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationPickerComponent.swift; sourceTree = "<group>"; };
+		6A1D54272A4AD01500F1A0B7 /* ClothesStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesStyle.swift; sourceTree = "<group>"; };
+		6A1D54292A4AD0C900F1A0B7 /* BodyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyShape.swift; sourceTree = "<group>"; };
 		C07679EF2A4ABB5300CEE111 /* snap-style.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "snap-style.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C07679F22A4ABB5300CEE111 /* SnapStyleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapStyleApp.swift; sourceTree = "<group>"; };
 		C07679F42A4ABB5300CEE111 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +48,7 @@
 		C07679FE2A4ABB5400CEE111 /* snap_style.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = snap_style.xcdatamodel; sourceTree = "<group>"; };
 		C0767A092A4AC22E00CEE111 /* ScanResultBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultBottomSheetView.swift; sourceTree = "<group>"; };
 		C0767A0B2A4AC2A300CEE111 /* ScanResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultView.swift; sourceTree = "<group>"; };
+		C0835D712A4ACA4400D0DA96 /* DummyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,7 @@
 				C0767A082A4ABC5F00CEE111 /* Components */,
 				C0767A0B2A4AC2A300CEE111 /* ScanResultView.swift */,
 				77427F182A4AC16B0064DA28 /* OnBoardingView.swift */,
+				6A1D54212A4ACB7E00F1A0B7 /* RecommendationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +123,8 @@
 		C0767A072A4ABC5800CEE111 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6A1D54272A4AD01500F1A0B7 /* ClothesStyle.swift */,
+				6A1D54292A4AD0C900F1A0B7 /* BodyShape.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,6 +137,9 @@
 				77427F1C2A4AC1AC0064DA28 /* OnBoardingSecondView.swift */,
 				77427F1E2A4AC1BA0064DA28 /* OnBoardingThirdView.swift */,
 				77427F202A4AC1CD0064DA28 /* OnBoardingExtensions.swift */,
+				C0835D712A4ACA4400D0DA96 /* DummyComponent.swift */,
+				6A1D54232A4ACBC400F1A0B7 /* TabViewComponents.swift */,
+				6A1D54252A4ACBEB00F1A0B7 /* RecommendationPickerComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -206,7 +224,13 @@
 				77427F1F2A4AC1BA0064DA28 /* OnBoardingThirdView.swift in Sources */,
 				77427F1D2A4AC1AC0064DA28 /* OnBoardingSecondView.swift in Sources */,
 				77427F212A4AC1CD0064DA28 /* OnBoardingExtensions.swift in Sources */,
+				C0835D722A4ACA4400D0DA96 /* DummyComponent.swift in Sources */,
+				6A1D54242A4ACBC400F1A0B7 /* TabViewComponents.swift in Sources */,
+				6A1D54262A4ACBEB00F1A0B7 /* RecommendationPickerComponent.swift in Sources */,
+				6A1D54282A4AD01500F1A0B7 /* ClothesStyle.swift in Sources */,
 				C07679F32A4ABB5300CEE111 /* SnapStyleApp.swift in Sources */,
+				6A1D54222A4ACB7E00F1A0B7 /* RecommendationView.swift in Sources */,
+				6A1D542A2A4AD0C900F1A0B7 /* BodyShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
