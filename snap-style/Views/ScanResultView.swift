@@ -30,7 +30,7 @@ struct ScanResultView: View {
                 Text("Show Detail About Body Shape")
                     .padding()
                     .background(Color("primary"))
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("secondary"))
                     .cornerRadius(10)
             }
         }
@@ -95,7 +95,7 @@ struct BottomSheetView: View {
                 Text("See Your Personalized Style")
                     .padding()
                     .background(Color("primary"))
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("secondary"))
                     .cornerRadius(10)
             }
             .padding(.bottom, 20)
@@ -105,7 +105,7 @@ struct BottomSheetView: View {
         .padding(.vertical, 10)
         .frame(width: 400)
         .frame(width: .infinity)
-        .background(Color.white)
+        .background(Color("secondary"))
         .cornerRadius(10)
         .edgesIgnoringSafeArea(.all)
     }

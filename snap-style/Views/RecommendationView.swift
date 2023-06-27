@@ -26,7 +26,7 @@ struct RecommendationView: View {
     ]
     
     init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: Color("secondary")]
     }
     
     let pinterestColoum = [
@@ -37,13 +37,13 @@ struct RecommendationView: View {
             NavigationStack {
                 VStack {
                     HStack {
-                        Text("Styles For You").font(.system(.largeTitle, weight: .bold)).foregroundColor(Color.white)
+                        Text("Styles For You").font(.system(.largeTitle, weight: .bold)).foregroundColor(Color("secondary"))
                         Spacer()
-                        Image(systemName: "heart").resizable().frame(width: 24.44, height: 22.41).foregroundColor(Color.white)
+                        Image(systemName: "heart").resizable().frame(width: 24.44, height: 22.41).foregroundColor(Color("secondary"))
                     }.padding(.bottom, 40)
                     
                     HStack {
-                        Text("Filter").font(.system(size: 20, weight: .bold)).foregroundColor(Color.white)
+                        Text("Filter").font(.system(size: 20, weight: .bold)).foregroundColor(Color("secondary"))
                         Spacer()
                     }
                     
@@ -95,7 +95,7 @@ struct RecommendationView: View {
                             }.padding(.top, 10)
                         }.padding(.top, 5)
                     }.frame(maxWidth: .infinity)
-                        .background(Color.white)
+                        .background(Color("secondary"))
                         .clipShape(
                             RoundedRectangle(
                                 cornerRadius: 20,

@@ -17,13 +17,13 @@ struct RecommendationPickerComponent: View {
             Picker("Data Picker", selection: $choosePicker) {
                 ForEach(dataPickers, id: \.self) { picker in
                     HStack {
-                        Text(picker).foregroundColor(Color.white)
+                        Text(picker).foregroundColor(Color("secondary"))
                     }
                 }
             }
         } label: {
             HStack {
-                Text(choosePicker).foregroundColor(Color.white)
+                Text(choosePicker).foregroundColor(Color("secondary"))
                     .font(.system(size: 13))
                     .padding(.trailing, 15)
                 Image("DropdownIcon")

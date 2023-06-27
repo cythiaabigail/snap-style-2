@@ -41,22 +41,22 @@ struct RecommendationBottomSheetView: View {
                         .ignoresSafeArea()
                     VStack (alignment: .leading) {
                         Text("Full Set Suit & Trousers")
-                            .foregroundColor(.white)
+                            .foregroundColor(Color("secondary"))
                             .fontWeight(.bold)
                             .font(.title2)
                         ScrollView(.horizontal) {
                             HStack {
                                 Text("Formal")
-                                    .foregroundColor(.white)
+                                    .foregroundColor(Color("secondary"))
                                     .padding(.vertical, 4)
                                     .padding(.horizontal,10)
-                                    .border(.white)
+                                    .border(Color("secondary"))
                                     .fontWeight(.bold)
                                 Text("Semi-Formal")
-                                    .foregroundColor(.white)
+                                    .foregroundColor(Color("secondary"))
                                     .padding(.vertical, 4)
                                     .padding(.horizontal,10)
-                                    .border(.white)
+                                    .border(Color("secondary"))
                                     .fontWeight(.bold)
                             }
                         }
@@ -64,7 +64,7 @@ struct RecommendationBottomSheetView: View {
                             .frame(height: 25)
                         ScrollView {
                             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
-                                .foregroundColor(.white)
+                                .foregroundColor(Color("secondary"))
                         }
                     }
                     .padding(.horizontal, 20)

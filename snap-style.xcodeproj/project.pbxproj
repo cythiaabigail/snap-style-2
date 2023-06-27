@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77427F192A4AC16B0064DA28 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F182A4AC16B0064DA28 /* OnBoardingView.swift */; };
-		77427F1B2A4AC1920064DA28 /* OnBoardingFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F1A2A4AC1920064DA28 /* OnBoardingFirstView.swift */; };
-		77427F1D2A4AC1AC0064DA28 /* OnBoardingSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F1C2A4AC1AC0064DA28 /* OnBoardingSecondView.swift */; };
-		77427F1F2A4AC1BA0064DA28 /* OnBoardingThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F1E2A4AC1BA0064DA28 /* OnBoardingThirdView.swift */; };
-		77427F212A4AC1CD0064DA28 /* OnBoardingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F202A4AC1CD0064DA28 /* OnBoardingExtensions.swift */; };
 		6A1D54222A4ACB7E00F1A0B7 /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54212A4ACB7E00F1A0B7 /* RecommendationView.swift */; };
 		6A1D54242A4ACBC400F1A0B7 /* TabViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54232A4ACBC400F1A0B7 /* TabViewComponents.swift */; };
 		6A1D54262A4ACBEB00F1A0B7 /* RecommendationPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54252A4ACBEB00F1A0B7 /* RecommendationPickerComponent.swift */; };
 		6A1D54282A4AD01500F1A0B7 /* ClothesStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54272A4AD01500F1A0B7 /* ClothesStyle.swift */; };
 		6A1D542A2A4AD0C900F1A0B7 /* BodyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54292A4AD0C900F1A0B7 /* BodyShape.swift */; };
+		77427F192A4AC16B0064DA28 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F182A4AC16B0064DA28 /* OnBoardingView.swift */; };
+		77427F1B2A4AC1920064DA28 /* OnBoardingFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F1A2A4AC1920064DA28 /* OnBoardingFirstView.swift */; };
+		77427F1D2A4AC1AC0064DA28 /* OnBoardingSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F1C2A4AC1AC0064DA28 /* OnBoardingSecondView.swift */; };
+		77427F1F2A4AC1BA0064DA28 /* OnBoardingThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F1E2A4AC1BA0064DA28 /* OnBoardingThirdView.swift */; };
+		77427F212A4AC1CD0064DA28 /* OnBoardingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F202A4AC1CD0064DA28 /* OnBoardingExtensions.swift */; };
 		C07679F32A4ABB5300CEE111 /* SnapStyleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07679F22A4ABB5300CEE111 /* SnapStyleApp.swift */; };
 		C07679F52A4ABB5300CEE111 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07679F42A4ABB5300CEE111 /* ContentView.swift */; };
 		C07679F72A4ABB5400CEE111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C07679F62A4ABB5400CEE111 /* Assets.xcassets */; };
@@ -30,16 +30,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		77427F182A4AC16B0064DA28 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
-		77427F1A2A4AC1920064DA28 /* OnBoardingFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingFirstView.swift; path = "snap-style/Views/OnBoardingFirstView.swift"; sourceTree = SOURCE_ROOT; };
-		77427F1C2A4AC1AC0064DA28 /* OnBoardingSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingSecondView.swift; path = "snap-style/Views/OnBoardingSecondView.swift"; sourceTree = SOURCE_ROOT; };
-		77427F1E2A4AC1BA0064DA28 /* OnBoardingThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingThirdView.swift; path = "snap-style/Views/OnBoardingThirdView.swift"; sourceTree = SOURCE_ROOT; };
-		77427F202A4AC1CD0064DA28 /* OnBoardingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingExtensions.swift; path = "snap-style/Views/OnBoardingExtensions.swift"; sourceTree = SOURCE_ROOT; };
 		6A1D54212A4ACB7E00F1A0B7 /* RecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
 		6A1D54232A4ACBC400F1A0B7 /* TabViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewComponents.swift; sourceTree = "<group>"; };
 		6A1D54252A4ACBEB00F1A0B7 /* RecommendationPickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationPickerComponent.swift; sourceTree = "<group>"; };
 		6A1D54272A4AD01500F1A0B7 /* ClothesStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesStyle.swift; sourceTree = "<group>"; };
 		6A1D54292A4AD0C900F1A0B7 /* BodyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyShape.swift; sourceTree = "<group>"; };
+		77427F182A4AC16B0064DA28 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		77427F1A2A4AC1920064DA28 /* OnBoardingFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingFirstView.swift; path = "snap-style/Views/OnBoardingFirstView.swift"; sourceTree = SOURCE_ROOT; };
+		77427F1C2A4AC1AC0064DA28 /* OnBoardingSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingSecondView.swift; path = "snap-style/Views/OnBoardingSecondView.swift"; sourceTree = SOURCE_ROOT; };
+		77427F1E2A4AC1BA0064DA28 /* OnBoardingThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingThirdView.swift; path = "snap-style/Views/OnBoardingThirdView.swift"; sourceTree = SOURCE_ROOT; };
+		77427F202A4AC1CD0064DA28 /* OnBoardingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingExtensions.swift; path = "snap-style/Views/OnBoardingExtensions.swift"; sourceTree = SOURCE_ROOT; };
 		C07679EF2A4ABB5300CEE111 /* snap-style.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "snap-style.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C07679F22A4ABB5300CEE111 /* SnapStyleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapStyleApp.swift; sourceTree = "<group>"; };
 		C07679F42A4ABB5300CEE111 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -371,6 +371,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,6 +401,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

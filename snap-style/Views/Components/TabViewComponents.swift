@@ -14,14 +14,11 @@ struct TabViewComponents: View {
             RecommendationView().tabItem {
                 Label("", systemImage: "house")
             }
-            
             //example
             ContentView().tabItem {
                 Label("", systemImage: "person")
             }
-        }.tint(Color("yellow")).onAppear() {
-            UITabBar.appearance().backgroundColor = .white
-        }
+        }.tint(Color("yellow"))
     }
 }
 
