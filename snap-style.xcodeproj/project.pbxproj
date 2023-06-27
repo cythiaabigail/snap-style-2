@@ -26,6 +26,7 @@
 		C0767A0A2A4AC22E00CEE111 /* ScanResultBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0767A092A4AC22E00CEE111 /* ScanResultBottomSheetView.swift */; };
 		C0767A0C2A4AC2A300CEE111 /* ScanResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0767A0B2A4AC2A300CEE111 /* ScanResultView.swift */; };
 		C0835D722A4ACA4400D0DA96 /* DummyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0835D712A4ACA4400D0DA96 /* DummyComponent.swift */; };
+		C0835D752A4ACD9700D0DA96 /* RecommendationBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0835D742A4ACD9700D0DA96 /* RecommendationBottomSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		C0767A092A4AC22E00CEE111 /* ScanResultBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultBottomSheetView.swift; sourceTree = "<group>"; };
 		C0767A0B2A4AC2A300CEE111 /* ScanResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultView.swift; sourceTree = "<group>"; };
 		C0835D712A4ACA4400D0DA96 /* DummyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyComponent.swift; sourceTree = "<group>"; };
+		C0835D742A4ACD9700D0DA96 /* RecommendationBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationBottomSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				C0835D712A4ACA4400D0DA96 /* DummyComponent.swift */,
 				6A1D54232A4ACBC400F1A0B7 /* TabViewComponents.swift */,
 				6A1D54252A4ACBEB00F1A0B7 /* RecommendationPickerComponent.swift */,
+				C0835D742A4ACD9700D0DA96 /* RecommendationBottomSheetView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				77427F1B2A4AC1920064DA28 /* OnBoardingFirstView.swift in Sources */,
 				C07679FC2A4ABB5400CEE111 /* Persistence.swift in Sources */,
+				C0835D752A4ACD9700D0DA96 /* RecommendationBottomSheetView.swift in Sources */,
 				C07679FF2A4ABB5400CEE111 /* snap_style.xcdatamodeld in Sources */,
 				C0767A0A2A4AC22E00CEE111 /* ScanResultBottomSheetView.swift in Sources */,
 				C07679F52A4ABB5300CEE111 /* ContentView.swift in Sources */,
