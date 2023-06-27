@@ -55,8 +55,10 @@
 		C07679F12A4ABB5300CEE111 /* snap-style */ = {
 			isa = PBXGroup;
 			children = (
+				C0767A072A4ABC5800CEE111 /* Models */,
+				C0767A062A4ABC4F00CEE111 /* Views */,
+				C0767A052A4ABC4400CEE111 /* ViewModels */,
 				C07679F22A4ABB5300CEE111 /* SnapStyleApp.swift */,
-				C07679F42A4ABB5300CEE111 /* ContentView.swift */,
 				C07679F62A4ABB5400CEE111 /* Assets.xcassets */,
 				C07679FB2A4ABB5400CEE111 /* Persistence.swift */,
 				C07679FD2A4ABB5400CEE111 /* snap_style.xcdatamodeld */,
@@ -71,6 +73,36 @@
 				C07679F92A4ABB5400CEE111 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C0767A052A4ABC4400CEE111 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C0767A062A4ABC4F00CEE111 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C07679F42A4ABB5300CEE111 /* ContentView.swift */,
+				C0767A082A4ABC5F00CEE111 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C0767A072A4ABC5800CEE111 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C0767A082A4ABC5F00CEE111 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
