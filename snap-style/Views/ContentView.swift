@@ -16,6 +16,7 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
 
+    @State  var increment: Int = 0
     var body: some View {
         TabViewComponents()
 //        NavigationView {
