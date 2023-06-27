@@ -13,6 +13,8 @@
 		C07679FA2A4ABB5400CEE111 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C07679F92A4ABB5400CEE111 /* Preview Assets.xcassets */; };
 		C07679FC2A4ABB5400CEE111 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07679FB2A4ABB5400CEE111 /* Persistence.swift */; };
 		C07679FF2A4ABB5400CEE111 /* snap_style.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C07679FD2A4ABB5400CEE111 /* snap_style.xcdatamodeld */; };
+		C0767A0A2A4AC22E00CEE111 /* ScanResultBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0767A092A4AC22E00CEE111 /* ScanResultBottomSheetView.swift */; };
+		C0767A0C2A4AC2A300CEE111 /* ScanResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0767A0B2A4AC2A300CEE111 /* ScanResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		C07679F92A4ABB5400CEE111 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C07679FB2A4ABB5400CEE111 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C07679FE2A4ABB5400CEE111 /* snap_style.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = snap_style.xcdatamodel; sourceTree = "<group>"; };
+		C0767A092A4AC22E00CEE111 /* ScanResultBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultBottomSheetView.swift; sourceTree = "<group>"; };
+		C0767A0B2A4AC2A300CEE111 /* ScanResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			children = (
 				C07679F42A4ABB5300CEE111 /* ContentView.swift */,
 				C0767A082A4ABC5F00CEE111 /* Components */,
+				C0767A0B2A4AC2A300CEE111 /* ScanResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 		C0767A082A4ABC5F00CEE111 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C0767A092A4AC22E00CEE111 /* ScanResultBottomSheetView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -177,7 +183,9 @@
 			files = (
 				C07679FC2A4ABB5400CEE111 /* Persistence.swift in Sources */,
 				C07679FF2A4ABB5400CEE111 /* snap_style.xcdatamodeld in Sources */,
+				C0767A0A2A4AC22E00CEE111 /* ScanResultBottomSheetView.swift in Sources */,
 				C07679F52A4ABB5300CEE111 /* ContentView.swift in Sources */,
+				C0767A0C2A4AC2A300CEE111 /* ScanResultView.swift in Sources */,
 				C07679F32A4ABB5300CEE111 /* SnapStyleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
