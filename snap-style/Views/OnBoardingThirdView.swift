@@ -13,8 +13,6 @@ struct OnBoardingThirdView: View {
     @AppStorage("weight") var weight: String = ""
     @AppStorage("height") var height: String = ""
     
-//    @State private var weight: String = ""
-    
     @Binding var increment: Int
     
     var body: some View {

@@ -9,8 +9,16 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @State private var height: String = ""
-    @State private var weight: String = ""
+    @AppStorage("name") var name: String = ""
+    @AppStorage("gender") var gender: String = ""
+    @AppStorage("height") var height: String = ""
+    @AppStorage("weight") var weight: String = ""
+    @AppStorage("age") var age: String = ""
+    
+    @State var isWeightToogle: Bool = true
+    @State var isHeightToggle: Bool = true
+    @State var isAgeToggle: Bool = true
+    @State var isNameToggle: Bool = true
     
     var body: some View {
         GeometryReader { geo in
@@ -91,38 +99,108 @@ struct ProfileView: View {
                                         .fontWeight(.semibold)
                                         .padding(.trailing,50)
                                         VStack(alignment: .leading){
-                                            
                                             HStack{
-                                                Text("Not Set")
-                                                Image("pencil")
+                                                if (isNameToggle) {
+                                                    Text(name == "" ? "Not Set" : name)
+                                                } else {
+                                                    TextField("Name", text: $name)
+                                                        .textFieldStyle(PlainTextFieldStyle())
+                                                        .padding(.bottom, 5)
+                                                        .overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
+
+                                                }
+                                                Spacer()
+                                                Button  {
+                                                    isNameToggle.toggle()
+                                                } label: {
+                                                    if (isNameToggle) {
+                                                        Image("pencil")
+                                                    } else {
+                                                        Image(systemName: "square.and.arrow.down")
+                                                            .foregroundColor(Color("primary"))
+                                                    }
+                                                }
                                             }
                                             .padding(.bottom,15)
                                             HStack{
-                                                Image("male_dark")
+                                                Image(gender == "male" ? "male_dark" : "female_dark")
                                                     .resizable()
+                                                    .aspectRatio(contentMode: .fit)
                                                     .frame(width: 15,height: 15)
-                                                Text("Male")
+                                                Text(gender == "male" ? "Male" : "Female")
                                             }
                                             .padding(.bottom,15)
                                             HStack{
-                                                Text("Not Set")
-                                                Image("pencil")
+                                                if (isAgeToggle) {
+                                                    Text(age == "" ? "Not Set" : age)
+                                                } else {
+                                                    TextField("Age", text: $age)
+                                                        .textFieldStyle(PlainTextFieldStyle())
+                                                        .padding(.bottom, 5)
+                                                        .overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
+
+                                                }
+                                                Spacer()
+                                                Button  {
+                                                    isAgeToggle.toggle()
+                                                } label: {
+                                                    if (isAgeToggle) {
+                                                        Image("pencil")
+                                                    } else {
+                                                        Image(systemName: "square.and.arrow.down")
+                                                            .foregroundColor(Color("primary"))
+                                                    }
+                                                }
                                             }
                                             .padding(.bottom,15)
                                             HStack{
-                                                Text("Not Set")
-                                                Image("pencil")
+                                                if (isHeightToggle) {
+                                                    Text(height == "" ? "Not Set" : "\(height) cm")
+                                                } else {
+                                                    TextField("Height", text: $height)
+                                                        .textFieldStyle(PlainTextFieldStyle())
+                                                        .padding(.bottom, 5)
+                                                        .overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
+                                                }
+                                                Spacer()
+                                                Button  {
+                                                    isHeightToggle.toggle()
+                                                } label: {
+                                                    if (isHeightToggle) {
+                                                        Image("pencil")
+                                                    } else {
+                                                        Image(systemName: "square.and.arrow.down")
+                                                            .foregroundColor(Color("primary"))
+                                                    }
+                                                }
                                             }
-                                            .padding(.bottom,15)
+                                            .padding(.bottom, 15)
                                             HStack{
-                                                Text("Not Set")
-                                                Image("pencil")
+                                                if (isWeightToogle) {
+                                                    Text(weight == "" ? "Not Set" : "\(weight) kg")
+                                                } else {
+                                                    TextField("Weight", text: $weight)
+                                                        .textFieldStyle(PlainTextFieldStyle())
+                                                        .padding(.bottom, 5)
+                                                        .overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
+                                                }
+                                                Spacer()
+                                                Button  {
+                                                    isWeightToogle.toggle()
+                                                } label: {
+                                                    if (isWeightToogle) {
+                                                        Image("pencil")
+                                                    } else {
+                                                        Image(systemName: "square.and.arrow.down")
+                                                            .foregroundColor(Color("primary"))
+                                                    }
+                                                }
                                             }
                                             .padding(.bottom,15)
                                             Spacer()
                                         }
                                     }.padding(.bottom,15)
-                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .frame(maxWidth: 250, alignment: .leading)
                                     
                                     
                                 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ScanResultBottomSheetView: View {
+    
     @Binding var isSheetPresented: Bool
     
     let bodyShapeTitle: String
