@@ -11,16 +11,12 @@ struct OnBoardingFirstView: View {
     @Binding var increment: Int
     var body: some View {
         VStack{
-            
             Spacer()
             Image("logo")
                 .resizable()
                 .frame(width: 125, height: 203)
                 .cornerRadius(10.0)
-            
             Spacer()
-            
-            
             Text("Welcome")
                 .font(.title)
                 .fontWeight(.bold)
@@ -28,10 +24,7 @@ struct OnBoardingFirstView: View {
             Text("Learn the best outfit styles for your body shape")
                 .frame(maxWidth: 250.0)
                 .multilineTextAlignment(.center)
-            
             Spacer()
-            
-            
             Button(action: {
                 increment += 1
             }){

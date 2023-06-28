@@ -7,15 +7,19 @@
 
 import SwiftUI
 
-
 struct OnBoardingThirdView: View {
-    @State private var height: String = ""
-    @State private var weight: String = ""
+    
+    @AppStorage("isNotOnboarding") var isNotOnboarding: Bool = false
+    @AppStorage("weight") var weight: String = ""
+    @AppStorage("height") var height: String = ""
+    
+//    @State private var weight: String = ""
+    
     @Binding var increment: Int
+    
     var body: some View {
         VStack {
             HStack{
-                
                 Image("logo")
                     .resizable()
                     .frame(width: 50, height: 80)
@@ -38,19 +42,14 @@ struct OnBoardingThirdView: View {
                 
                 VStack {
                     VStack(alignment:.leading){
-                        
                         Text("Height")
                             .font(.title3)
-                        
-                        
                         HStack {
                             TextField("", text: $height)
                                 .placeholder(when: height.isEmpty) {
                                     Text("Input your height").foregroundColor(.gray)}
                             
                                 .padding()
-                                
-                            
                             Text("cm")
                                 .padding()
                         }
@@ -60,12 +59,9 @@ struct OnBoardingThirdView: View {
                         )
                     }
                     .padding(.bottom)
-                    
                     VStack(alignment:.leading){
-                        
                         Text("Weight")
                             .font(.title3)
-                        
                         HStack {
                             TextField("", text: $weight)
                                 .placeholder(when: weight.isEmpty) {
@@ -80,7 +76,6 @@ struct OnBoardingThirdView: View {
                                 .stroke(Color("secondary"), lineWidth: 2)
                         )
                     }
-                    
                 }
                 
                 Spacer()
@@ -102,20 +97,15 @@ struct OnBoardingThirdView: View {
                             )
                     }.padding()
                     
-                    NavigationLink (destination: TabViewComponents()) {
+                    NavigationLink (destination: TabViewComponents(), isActive: $isNotOnboarding) {
                         Text("Finish")
                             .padding()
                             .frame(maxWidth: .infinity, alignment:.center)
-                            .background(Color("secondary"))
+                            .background(height == "" || weight == "" ? Color("grey") : Color("secondary"))
                             .foregroundColor(Color("primary"))
                             .cornerRadius(12.0)
                     }
-                    
-//                    Button(action: {
-//
-//                    }){
-//
-//                    }.padding()
+                    .disabled(height == "" || weight == "")
                 }
                 
             }

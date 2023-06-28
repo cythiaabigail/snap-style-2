@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct RecommendationView: View {
+    
     let occationPickers : [String] = ["Formal", "Semi Formal", "Casual"]
     let piecePickers : [String] = ["Outter", "Pants", "Full"]
     let colorPickers : [String] = ["Red", "Green", "Blue"]
+    
     @State var occationPick : String = "All Occation"
     @State var piecePick : String = "All Piece"
     @State var colorPick : String = "All Color"
     @State var isClothClicked : Bool = false
     @State var selectedStyle : ClothesStyle?
     
-    let listBodyShape = BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)
+    let listBodyShape = BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.male)
     
-    let listStyle = [ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto1", isFavorite: false),
-                     ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto2", isFavorite: false),
-                     ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto3", isFavorite: false),
-                     ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto4", isFavorite: false),
+    let listStyle = [ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.male)], name: "baju renang", gender: Gender.male, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto1", isFavorite: false),
+                     ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.male)], name: "baju renang", gender: Gender.male, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto2", isFavorite: false),
+                     ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.male)], name: "baju renang", gender: Gender.male, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto3", isFavorite: false),
+                     ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.male)], name: "baju renang", gender: Gender.male, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto4", isFavorite: false),
     ]
     
     init() {

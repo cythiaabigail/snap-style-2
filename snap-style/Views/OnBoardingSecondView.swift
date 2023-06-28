@@ -9,24 +9,26 @@ import SwiftUI
 
 
 struct OnBoardingSecondView: View {
+    
+    @AppStorage("gender") var gender: String = ""
+    
     @Binding var increment: Int
+    
     @State private var isMaleChecked = false
     @State private var isFemaleChecked = false
+    
     var body: some View {
         VStack {
             HStack{
-                
                 Image("logo")
                     .resizable()
                     .frame(width: 50, height: 80)
                     .cornerRadius(10.0)
-                
                 Text("SnapStyle")
                     .font(.title)
                     .fontWeight(.bold)
             }
             .padding(.vertical,30)
-            
             VStack (alignment: .leading){
                 
                 Text("Select Gender")
@@ -35,14 +37,11 @@ struct OnBoardingSecondView: View {
                     .padding(.bottom, 10)
                 Text("This helps us find you more relevant recommendation. ")
                     .padding(.bottom, 50)
-                
                 HStack{
-                    
-                    
-                    
                     Button (action:{
                         isMaleChecked.toggle()
                         isFemaleChecked = false
+                        gender = "male"
                     }) {
                         VStack{
                             Image(isMaleChecked ? "male_dark" : "male")
@@ -58,17 +57,16 @@ struct OnBoardingSecondView: View {
                         .padding(30)
                         .background(isMaleChecked ? Color("secondary") : Color("primary"))
                         .cornerRadius(10.0)
-                        .overlay( /// apply a rounded border
+                        .overlay(
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color("secondary"), lineWidth: 2)
-                    )
+                        )
                     }
-                    
                     Spacer()
-                    
                     Button(action:{
                         isFemaleChecked.toggle()
                         isMaleChecked = false
+                        gender = "female"
                     }) {
                         VStack{
                             Image(isFemaleChecked ? "female_dark" : "female")
@@ -81,28 +79,25 @@ struct OnBoardingSecondView: View {
                         .frame(width: 80,height: 200)
                         .padding(30)
                         .background(isFemaleChecked ? Color("secondary") : Color("primary"))
-                        .overlay( /// apply a rounded border
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color("secondary"), lineWidth: 2)
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("secondary"), lineWidth: 2)
                     )
                     }
                     Spacer()
                 }
-                
                 Spacer()
-                
-                
                 Button(action: {
                     increment += 1
                 }){
                     Text("Next")
                         .padding()
                         .frame(maxWidth: .infinity, alignment:.center)
-                        .background(Color("secondary"))
+                        .background(!isMaleChecked && !isFemaleChecked ? Color("grey") : Color("secondary"))
                         .foregroundColor(Color("primary"))
                         .cornerRadius(12.0)
-                }.padding()
-                
+                    }
+                    .disabled(isMaleChecked == false && isFemaleChecked == false)
+                    .padding()
             }
             .padding(.top)
             .padding(.leading)

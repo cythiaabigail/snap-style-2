@@ -14,8 +14,3 @@ struct BodyShape: Identifiable {
     var image : String
     var gender : Gender
 }
-
-enum Gender {
-    case woman
-    case man
-}
