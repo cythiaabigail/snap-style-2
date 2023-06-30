@@ -10,18 +10,13 @@ import SwiftUI
 struct OnBoardingView: View {
     @State  var increment: Int = 0
     var body: some View {
-        //        SecondBoarding()
         NavigationStack{
-            
             VStack {
                 if(increment == 0){
-                    
                     OnBoardingFirstView(increment:$increment)
                 }else if(increment == 1){
-                    
-                        OnBoardingSecondView(increment:$increment)
-                }
-                else{
+                    OnBoardingSecondView(increment:$increment)
+                }else{
                     OnBoardingThirdView(increment:$increment)
                 }
             }
