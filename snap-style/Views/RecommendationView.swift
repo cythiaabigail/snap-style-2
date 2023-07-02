@@ -14,9 +14,13 @@ struct RecommendationView: View {
     @State var occationPick : String = "All Occation"
     @State var piecePick : String = "All Piece"
     @State var colorPick : String = "All Color"
+    @State var occationPicks : [String] = []
+    @State var piecePicks : [String] = []
+    @State var colorPicks : [String] = []
     @State var isClothClicked : Bool = false
     @State var selectedStyle : ClothesStyle?
-    
+    @State var isFilterClicked : Bool = false
+
     let listBodyShape = BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)
     
     let listStyle = [ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto1", isFavorite: false),
@@ -43,20 +47,15 @@ struct RecommendationView: View {
                     }.padding(.bottom, 40)
                     
                     HStack {
-                        Text("Filter").font(.system(size: 20, weight: .bold)).foregroundColor(Color.white)
+                        Button {
+                            isFilterClicked = true
+                        } label: {
+                            HStack {
+                                Image("filter_icon")
+                                Text("Filter").font(.system(size: 20, weight: .bold)).foregroundColor(Color.white)
+                            }
+                        }
                         Spacer()
-                    }
-                    
-                    HStack {
-                        RecommendationPickerComponent(choosePicker: $occationPick, dataPickers: occationPickers)
-                        
-                        Spacer()
-                        
-                        RecommendationPickerComponent(choosePicker: $piecePick , dataPickers: piecePickers)
-                        
-                        Spacer()
-                        
-                        RecommendationPickerComponent(choosePicker: $colorPick, dataPickers: colorPickers)
                     }
                     
                     ScrollView {
@@ -72,7 +71,6 @@ struct RecommendationView: View {
                                         }.onTapGesture {
                                             isClothClicked = true
                                             selectedStyle = listStyle[styleIndex]
-                                            print(selectedStyle?.image)
                                         }
                                     }
                                 }
@@ -88,7 +86,6 @@ struct RecommendationView: View {
                                         }.padding(.bottom, 11).onTapGesture {
                                             isClothClicked = true
                                             selectedStyle = listStyle[styleIndex]
-                                            print(selectedStyle?.image)
                                         }
                                     }
                                 }
@@ -111,6 +108,12 @@ struct RecommendationView: View {
         }
         .sheet(isPresented: $isClothClicked) {
             RecommendationBottomSheetView(isPreviewShowed: $isClothClicked)
+        }
+        .sheet(isPresented: $isFilterClicked) {
+            RecommendationFilterView(chooseOccations: $occationPicks, choosePieces: $piecePicks, chooseColors: $colorPicks)
+                .presentationDetents([.fraction(0.5)])
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(20)
         }
     }
 }

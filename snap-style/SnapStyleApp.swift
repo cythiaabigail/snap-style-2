@@ -13,7 +13,7 @@ struct SnapStyleApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RecommendationView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
