@@ -107,7 +107,6 @@ struct RecommendationView: View {
                             ).inset(by: -1)
                         )
                         .ignoresSafeArea()
-                        .frame(width: .infinity)
                         .padding(.horizontal, -14)
                 }.padding(.horizontal, 14).padding(.top, 20)
                     .background(Color.black)
