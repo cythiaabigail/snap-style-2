@@ -254,8 +254,6 @@ struct ProfileView: View {
                     }
                     .background(Color("secondary"))
                     .cornerRadius(20.0, corners: [.topLeft, .topRight])
-                    
-                    Spacer()
                 }
                 
                 
