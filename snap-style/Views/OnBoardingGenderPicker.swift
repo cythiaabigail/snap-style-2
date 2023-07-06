@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct OnBoardingSecondView: View {
+struct OnBoardingGenderPicker: View {
     
     @AppStorage("gender") var gender: String = ""
     
@@ -112,8 +112,8 @@ struct OnBoardingSecondView: View {
     }
 }
 
-struct OnBoardingSecondView_Previews: PreviewProvider {
+struct OnBoardingGenderPicker_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardingSecondView(increment: .constant(1))
+        OnBoardingGenderPicker(increment: .constant(1))
     }
 }

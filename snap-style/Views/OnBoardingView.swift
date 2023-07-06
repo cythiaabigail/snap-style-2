@@ -13,11 +13,11 @@ struct OnBoardingView: View {
         NavigationStack{
             VStack {
                 if(increment == 0){
-                    OnBoardingFirstView(increment:$increment)
+                    OnBoardingGetStarted(increment:$increment)
                 }else if(increment == 1){
-                    OnBoardingSecondView(increment:$increment)
+                    OnBoardingGenderPicker(increment:$increment)
                 }else{
-                    OnBoardingThirdView(increment:$increment)
+                    OnBoardingPersonalData(increment:$increment)
                 }
             }
         }

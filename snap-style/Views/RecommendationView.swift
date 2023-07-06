@@ -74,7 +74,6 @@ struct RecommendationView: View {
                                         }.onTapGesture {
                                             isClothClicked = true
                                             selectedStyle = listStyle[styleIndex]
-                                            print(selectedStyle?.image)
                                         }
                                     }
                                 }
@@ -90,7 +89,6 @@ struct RecommendationView: View {
                                         }.padding(.bottom, 11).onTapGesture {
                                             isClothClicked = true
                                             selectedStyle = listStyle[styleIndex]
-                                            print(selectedStyle?.image)
                                         }
                                     }
                                 }

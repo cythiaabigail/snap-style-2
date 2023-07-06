@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OnBoardingFirstView: View {
+struct OnBoardingGetStarted: View {
     @Binding var increment: Int
     var body: some View {
         VStack{
@@ -39,8 +39,8 @@ struct OnBoardingFirstView: View {
     }
 }
 
-struct OnBoardingFirstView_Previews: PreviewProvider {
+struct OnBoardingGetStarted_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardingFirstView(increment: .constant(0))
+        OnBoardingGetStarted(increment: .constant(0))
     }
 }

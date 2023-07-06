@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OnBoardingThirdView: View {
+struct OnBoardingPersonalData: View {
     
     @AppStorage("isNotOnboarding") var isNotOnboarding: Bool = false
     @AppStorage("weight") var weight: String = ""
@@ -120,8 +120,8 @@ struct OnBoardingThirdView: View {
     }
 }
 
-struct OnBoardingThirdView_Previews: PreviewProvider {
+struct OnBoardingPersonalData_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardingThirdView(increment: .constant(2))
+        OnBoardingPersonalData(increment: .constant(2))
     }
 }
