@@ -21,6 +21,7 @@
 		C03474502A5691000027CEDC /* bodyshape.json in Resources */ = {isa = PBXBuildFile; fileRef = C034744F2A5691000027CEDC /* bodyshape.json */; };
 		C03474522A56915A0027CEDC /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03474512A56915A0027CEDC /* Helpers.swift */; };
 		C03474542A56A0ED0027CEDC /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03474532A56A0ED0027CEDC /* ModelData.swift */; };
+		C03474562A56A58B0027CEDC /* clothesstyle.json in Resources */ = {isa = PBXBuildFile; fileRef = C03474552A56A58B0027CEDC /* clothesstyle.json */; };
 		C0593CBD2A4C1C4300667538 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0593CBC2A4C1C4300667538 /* Enums.swift */; };
 		C07679F32A4ABB5300CEE111 /* SnapStyleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07679F22A4ABB5300CEE111 /* SnapStyleApp.swift */; };
 		C07679F52A4ABB5300CEE111 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07679F42A4ABB5300CEE111 /* ContentView.swift */; };
@@ -48,6 +49,7 @@
 		C034744F2A5691000027CEDC /* bodyshape.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bodyshape.json; sourceTree = "<group>"; };
 		C03474512A56915A0027CEDC /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		C03474532A56A0ED0027CEDC /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		C03474552A56A58B0027CEDC /* clothesstyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = clothesstyle.json; sourceTree = "<group>"; };
 		C0593CBC2A4C1C4300667538 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		C07679EF2A4ABB5300CEE111 /* snap-style.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "snap-style.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C07679F22A4ABB5300CEE111 /* SnapStyleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapStyleApp.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				C034744F2A5691000027CEDC /* bodyshape.json */,
+				C03474552A56A58B0027CEDC /* clothesstyle.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03474562A56A58B0027CEDC /* clothesstyle.json in Resources */,
 				C03474502A5691000027CEDC /* bodyshape.json in Resources */,
 				C07679FA2A4ABB5400CEE111 /* Preview Assets.xcassets in Resources */,
 				C07679F72A4ABB5400CEE111 /* Assets.xcassets in Resources */,

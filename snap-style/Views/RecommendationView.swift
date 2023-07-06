@@ -19,42 +19,35 @@ struct RecommendationView: View {
     @State var isClothClicked : Bool = false
     @State var selectedStyle : ClothesStyle?
     
-//    let listBodyShape = BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.male)
-    
-    let listBodyShape: [BodyShape] = getBodyShapes() ?? []
-//    let listStyle: [ClothesStyle] = []
-    
-    let listStyle = [
-        ClothesStyle(
-            is: UUID(),
-            bodyShape: [listBodyShape[0]],
-            name: "Baju Renang",
-            gender: .male,
-        )
-    ]
-    
-    let listStyle = [
-        ClothesStyle(
-            id: UUID(),
-            bodyShape: [listBodyShape[0]], name: "baju renang", gender: Gender.male, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto1", isFavorite: false),
-        
-        ClothesStyle(id: UUID(), bodyShape: [listBodyShape[0]], name: "baju renang", gender: Gender.male, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto2", isFavorite: false),
-        
-        ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.male)], name: "baju renang", gender: Gender.male, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto3", isFavorite: false),
-        
-        ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.male)], name: "baju renang", gender: Gender.male, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto4", isFavorite: false),
-    ]
+    let pinterestColumn = [GridItem(.flexible())]
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: Color("secondary")]
     }
     
-    let pinterestColoum = [
-        GridItem(.flexible())]
+    var mappedImages: Dictionary<String, [ClothesStyle]?> {
+        
+        var idx = 0
+        var leftImages: [ClothesStyle]? = []
+        var rightImages: [ClothesStyle]? = []
+        
+        for cs in (clothesStyle ?? []) {
+            if (idx % 2 == 0) {
+                leftImages?.append(cs)
+            } else {
+                rightImages?.append(cs)
+            }
+            idx += 1
+        }
+        
+        return [
+            "left": leftImages,
+            "right": rightImages
+        ]
+    }
     
     var body: some View {
         GeometryReader { screenSize in
-//            NavigationStack {
                 VStack {
                     HStack {
                         Text("Styles For You").font(.system(.largeTitle, weight: .bold)).foregroundColor(Color("secondary"))
@@ -69,48 +62,41 @@ struct RecommendationView: View {
                     
                     HStack {
                         RecommendationPickerComponent(choosePicker: $occationPick, dataPickers: occationPickers)
-                        
                         Spacer()
-                        
                         RecommendationPickerComponent(choosePicker: $piecePick , dataPickers: piecePickers)
-                        
                         Spacer()
-                        
                         RecommendationPickerComponent(choosePicker: $colorPick, dataPickers: colorPickers)
                     }
                     
                     ScrollView {
                         HStack {
-                            LazyVGrid (columns: pinterestColoum) {
-                                ForEach(0...listStyle.count-1, id: \.self) { styleIndex in
-                                    if styleIndex % 2 == 0 {
-                                        ZStack {
-                                            RoundedRectangle(cornerRadius: 16).foregroundColor(.gray).opacity(0.1)
-                                                .frame(width: 169)
-                                            Image(listStyle[styleIndex].image)
-                                                .padding(.vertical, 10)
-                                        }.onTapGesture {
-                                            isClothClicked = true
-                                            selectedStyle = listStyle[styleIndex]
-                                        }
+                            LazyVGrid (columns: pinterestColumn) {
+                                ForEach((mappedImages["left"] ?? [])!, id: \.self) { leftItem in
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 16).foregroundColor(.gray).opacity(0.1)
+                                            .frame(width: 169)
+                                        Image(leftItem.image)
+                                            .padding(.vertical, 10)
+                                    }.onTapGesture {
+                                        isClothClicked = true
+                                        selectedStyle = leftItem
+                                    }
+                                }
+                            }.frame(maxHeight: .infinity, alignment: .top)
+                            LazyVGrid (columns: pinterestColumn) {
+                                ForEach((mappedImages["right"] ?? [])!, id: \.self) { rightItem in
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 16).foregroundColor(.gray).opacity(0.1)
+                                            .frame(width: 169)
+                                        Image(rightItem.image)
+                                            .padding(.vertical, 10)
+                                    }.onTapGesture {
+                                        isClothClicked = true
+                                        selectedStyle = rightItem
                                     }
                                 }
                             }
-                            LazyVGrid (columns: pinterestColoum) {
-                                ForEach(0...listStyle.count-1, id: \.self) { styleIndex in
-                                    if styleIndex % 2 == 1 {
-                                        ZStack {
-                                            RoundedRectangle(cornerRadius: 16).foregroundColor(.gray).opacity(0.1)
-                                                .frame(width: 169)
-                                            Image(listStyle[styleIndex].image)
-                                                .padding(.vertical, 10)
-                                        }.padding(.bottom, 11).onTapGesture {
-                                            isClothClicked = true
-                                            selectedStyle = listStyle[styleIndex]
-                                        }
-                                    }
-                                }
-                            }.padding(.top, 10)
+                            .frame(maxHeight: .infinity, alignment: .top)
                         }.padding(.top, 5)
                     }.frame(maxWidth: .infinity)
                         .background(Color("secondary"))
@@ -125,7 +111,6 @@ struct RecommendationView: View {
                         .padding(.horizontal, -14)
                 }.padding(.horizontal, 14).padding(.top, 20)
                     .background(Color.black)
-//            }.navigationBarBackButtonHidden(true)
         }
         .sheet(isPresented: $isClothClicked) {
             RecommendationBottomSheetView(isPreviewShowed: $isClothClicked)

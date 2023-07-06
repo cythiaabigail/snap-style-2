@@ -8,7 +8,7 @@
 import Foundation
 
 struct BodyShape: Codable {
-//    var id: UUID
+    var id: UUID
     var name: String
     var description: String
     var image: String
@@ -20,7 +20,7 @@ struct BodyShape: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-//        id = try container.decode(UUID.self, forKey: .id)
+        id = UUID()
         name = try container.decode(String.self, forKey: .name)
         description = try container.decode(String.self, forKey: .description)
         image = try container.decode(String.self, forKey: .image)
@@ -29,7 +29,7 @@ struct BodyShape: Codable {
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encode(id, forKey: .id)
+        try container.encode(id, forKey: .id)
         try container.encode(name, forKey: .name)
         try container.encode(description, forKey: .description)
         try container.encode(image, forKey: .image)
