@@ -12,12 +12,20 @@ struct TabViewComponents: View {
     var body: some View {
         TabView {
             RecommendationView().tabItem {
-                Label("", systemImage: "house")
+                Label("Style", systemImage: "tshirt")
             }
+            .toolbar(.visible, for: .tabBar)
+               .toolbarBackground(
+                   Color("secondary"),
+                   for: .tabBar)
             //example
             ProfileView().tabItem {
-                Label("", systemImage: "person")
+                Label("Profile", systemImage: "person")
             }
+            .toolbar(.visible, for: .tabBar)
+                .toolbarBackground(
+                    Color("secondary"),
+                    for: .tabBar)
         }.tint(Color("yellow"))
             .navigationBarBackButtonHidden(true)
     }

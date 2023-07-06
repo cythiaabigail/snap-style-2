@@ -17,13 +17,13 @@ struct ContentView: View {
     @AppStorage("gender") var gender: String = ""
     
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             if (isNotOnboarding == false) {
                 OnBoardingView()
             } else {
                 TabViewComponents()
             }
-        }
+//        }
     }
 }
 

@@ -24,12 +24,13 @@ struct ProfileView: View {
         GeometryReader { geo in
             
             ZStack {
-                VStack  (alignment: .leading){
+                VStack (alignment: .leading){
                     
+                    //START VSTACK SEMUA ISI ABOUT YOU
                     VStack (alignment: .leading){
                         
-                        
-                        Text("Trapezoid Body Shape")
+                        //JUDUL ABOUT YOU
+                        Text("About You")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color("secondary"))
@@ -37,194 +38,214 @@ struct ProfileView: View {
                             .frame(maxWidth: geo.size.width * 1.9 / 3.0,alignment: .leading)
                             .fixedSize(horizontal: false, vertical: true)
                         
-                        
-                        Text("The waist is the narrowest point on an average man’s torso. The rib cage widens steadily up to the collarbone and shoulders, which are the broadest parts of the torso. This gives the body an overall trapezoidal shape with the shorter side at the bottom.")
-                            .font(.caption)
-                            .foregroundColor(Color("secondary"))
-                            .padding(.bottom,12)
-                            .frame(maxWidth: geo.size.width * 1.9 / 3.0, maxHeight:70,alignment: .leading)
-                        
-                        Text("See more >")
-                            .foregroundColor(Color("yellow"))
-                            .font(.caption2)
-                            .padding(.bottom,20)
-                        
-                        Button(action: {
+                        //START VSTACK ABOUT YOU
+                        VStack (alignment: .leading){
                             
-                        }){
-                            Text("Rescan Body Shape")
-                                .padding(.horizontal,24)
-                                .padding(.vertical,12)
-                                .background(Color("secondary"))
-                                .foregroundColor(Color("primary"))
-                                .cornerRadius(4)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 4)
-                                        .stroke(Color("secondary"), lineWidth: 2)
-                                )
+                            //START HS ABOUT YOU
+                            HStack{
+                                //START VS ISI LABEL ABOUT YOU (Stack untuk penamaan gender, height, weight)
+                                VStack (alignment: .leading){
+                                    Text("Gender")
+                                        .padding(.bottom,15)
+                                    Text("Height")
+                                        .padding(.bottom,15)
+                                    Text("Weight")
+                                        .padding(.bottom,15)
+                                    
+                                }
+                                .fontWeight(.semibold)
+                                .padding(.trailing,50)
+                                //END VS ISI LABEL ABOUT YOU
+                                
+                                
+                                //START VS ISI ABOUT YOU (VStack untuk isi dari gender, height, weight)
+                                VStack(alignment: .leading){
+                                    HStack{
+                                        Image(gender == "male" ? "male" : "female")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 15,height: 15)
+                                        Text(gender == "male" ? "Male" : "Female")
+                                    }
+                                    .padding(.bottom,15)
+                                    HStack{
+                                        if (isHeightToggle) {
+                                            Text(height == "" ? "Not Set" : "\(height) cm")
+                                        } else {
+                                            TextField("Height", text: $height)
+                                                .textFieldStyle(PlainTextFieldStyle())
+                                                .padding(.bottom, 5)
+                                                .overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
+                                        }
+                                        Spacer()
+                                        Button  {
+                                            isHeightToggle.toggle()
+                                        } label: {
+                                            if (isHeightToggle) {
+                                                Image("pencil")
+                                            } else {
+                                                Image(systemName: "square.and.arrow.down")
+                                                    .foregroundColor(Color("secondary"))
+                                            }
+                                        }
+                                    }
+                                    .padding(.bottom, 15)
+                                    HStack{
+                                        if (isWeightToogle) {
+                                            Text(weight == "" ? "Not Set" : "\(weight) kg")
+                                        } else {
+                                            TextField("Weight", text: $weight)
+                                                .textFieldStyle(PlainTextFieldStyle())
+                                                .padding(.bottom, 5)
+                                                .overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
+                                        }
+                                        Spacer()
+                                        Button  {
+                                            isWeightToogle.toggle()
+                                        } label: {
+                                            if (isWeightToogle) {
+                                                Image("pencil")
+                                            } else {
+                                                Image(systemName: "square.and.arrow.down")
+                                                    .foregroundColor(Color("secondary"))
+                                            }
+                                        }
+                                    }
+                                    .padding(.bottom,15)
+                                }
+                                .frame(width: 100)
+                                //END VS ISI ABOUT YOU
+                            }
+                            .frame(alignment: .leading)
+                            .foregroundColor(Color("secondary"))
+                            //END HS ABOUT YOU
+                            
+                            
                         }
+                        //END VSTACK ABOUT YOU
                     }
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color("primary"))
+                    //END VSTACK SEMUA ISI ABOUT YOU
                     
                     
                     ZStack{
                         
                         VStack (alignment: .leading) {
                             VStack (alignment: .leading){
-                                Text("About You")
-                                    .font(.title)
+                                Text("Triangle Body Shape")
+                                    .font(.title2)
                                     .fontWeight(.bold)
                                     .foregroundColor(Color("primary"))
-                            }.padding()
-                            ScrollView {
-                                VStack (alignment: .leading){
-                                    
-                                    HStack{
-                                        VStack (alignment: .leading){
-                                            Text("Name")
-                                                .padding(.bottom,15)
-                                            Text("Gender")
-                                                .padding(.bottom,15)
-                                            Text("Age")
-                                                .padding(.bottom,15)
-                                            Text("Height")
-                                                .padding(.bottom,15)
-                                            Text("Weight")
-                                                .padding(.bottom,15)
-                                            Spacer()
-                                            
-                                        }
-                                        .fontWeight(.semibold)
-                                        .padding(.trailing,50)
-                                        VStack(alignment: .leading){
-                                            HStack{
-                                                if (isNameToggle) {
-                                                    Text(name == "" ? "Not Set" : name)
-                                                } else {
-                                                    TextField("Name", text: $name)
-                                                        .textFieldStyle(PlainTextFieldStyle())
-                                                        .padding(.bottom, 5)
-                                                        .overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
-
-                                                }
-                                                Spacer()
-                                                Button  {
-                                                    isNameToggle.toggle()
-                                                } label: {
-                                                    if (isNameToggle) {
-                                                        Image("pencil")
-                                                    } else {
-                                                        Image(systemName: "square.and.arrow.down")
-                                                            .foregroundColor(Color("primary"))
-                                                    }
-                                                }
-                                            }
-                                            .padding(.bottom,15)
-                                            HStack{
-                                                Image(gender == "male" ? "male_dark" : "female_dark")
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fit)
-                                                    .frame(width: 15,height: 15)
-                                                Text(gender == "male" ? "Male" : "Female")
-                                            }
-                                            .padding(.bottom,15)
-                                            HStack{
-                                                if (isAgeToggle) {
-                                                    Text(age == "" ? "Not Set" : age)
-                                                } else {
-                                                    TextField("Age", text: $age)
-                                                        .textFieldStyle(PlainTextFieldStyle())
-                                                        .padding(.bottom, 5)
-                                                        .overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
-
-                                                }
-                                                Spacer()
-                                                Button  {
-                                                    isAgeToggle.toggle()
-                                                } label: {
-                                                    if (isAgeToggle) {
-                                                        Image("pencil")
-                                                    } else {
-                                                        Image(systemName: "square.and.arrow.down")
-                                                            .foregroundColor(Color("primary"))
-                                                    }
-                                                }
-                                            }
-                                            .padding(.bottom,15)
-                                            HStack{
-                                                if (isHeightToggle) {
-                                                    Text(height == "" ? "Not Set" : "\(height) cm")
-                                                } else {
-                                                    TextField("Height", text: $height)
-                                                        .textFieldStyle(PlainTextFieldStyle())
-                                                        .padding(.bottom, 5)
-                                                        .overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
-                                                }
-                                                Spacer()
-                                                Button  {
-                                                    isHeightToggle.toggle()
-                                                } label: {
-                                                    if (isHeightToggle) {
-                                                        Image("pencil")
-                                                    } else {
-                                                        Image(systemName: "square.and.arrow.down")
-                                                            .foregroundColor(Color("primary"))
-                                                    }
-                                                }
-                                            }
-                                            .padding(.bottom, 15)
-                                            HStack{
-                                                if (isWeightToogle) {
-                                                    Text(weight == "" ? "Not Set" : "\(weight) kg")
-                                                } else {
-                                                    TextField("Weight", text: $weight)
-                                                        .textFieldStyle(PlainTextFieldStyle())
-                                                        .padding(.bottom, 5)
-                                                        .overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
-                                                }
-                                                Spacer()
-                                                Button  {
-                                                    isWeightToogle.toggle()
-                                                } label: {
-                                                    if (isWeightToogle) {
-                                                        Image("pencil")
-                                                    } else {
-                                                        Image(systemName: "square.and.arrow.down")
-                                                            .foregroundColor(Color("primary"))
-                                                    }
-                                                }
-                                            }
-                                            .padding(.bottom,15)
-                                            Spacer()
-                                        }
-                                    }.padding(.bottom,15)
-                                        .frame(maxWidth: 250, alignment: .leading)
-                                    
-                                    
-                                }
-                                .padding()
-                                .background(Color("secondary"))
                             }
-                            
-                            VStack{
+                            .frame(maxWidth: 240, alignment: .leading)
+                            .padding(.top)
+                            .padding()
+                            VStack (alignment: .leading){
+                                
+                                
+                                Text("The waist is the narrowest point on an average man’s torso. The rib cage widens steadily up to the collarbone and shoulders, which are the broadest parts of the torso. This gives the body an overall trapezoidal shape with the shorter side at the bottom.")
+                                    .font(.caption)
                                 
                                 Button(action: {
                                 }){
-                                    Text("Save Changes")
-                                        .padding()
+                                    Text("Rescan Body Shape")
+                                        .font(.caption)
+                                        .padding(.horizontal)
+                                        .padding(.vertical, 8)
                                         .frame(maxWidth: .infinity, alignment:.center)
                                         .background(Color("primary"))
                                         .foregroundColor(Color("secondary"))
-                                        .cornerRadius(12.0)
-                                        .opacity(0.5)
-                                }.padding()
-                                    .padding(.horizontal,30)
-                                    .padding(.bottom,100)
+                                        .cornerRadius(4.0)
+                                }
+                                .padding(.top)
                             }
-                            .background(Color("secondary"))
-                            
+                            .padding(.horizontal)
+                            .frame(maxWidth: 240, alignment: .leading)
+                            VStack (alignment: .leading){
+                                Text("Pro Tips")
+                                    .fontWeight(.semibold)
+                                    .padding(.bottom,0.1)
+                                ScrollView {
+                                    
+                                    VStack (alignment: .leading){
+                                        
+                                        HStack {
+                                            Image(systemName: "checkmark.circle.fill")
+                                                .foregroundColor(Color("yellow"))
+                                            Text("Slim-fit clothes to flatter your physiqueadgnflajfas")
+                                        }
+                                        .padding(.bottom, 0.1)
+                                        HStack {
+                                            Image(systemName: "checkmark.circle.fill")
+                                                .foregroundColor(Color("yellow"))
+                                            Text("Slim-fit clothes to flatter your physique")
+                                        }
+                                        .padding(.bottom, 0.1)
+                                        HStack {
+                                            Image(systemName: "checkmark.circle.fill")
+                                                .foregroundColor(Color("yellow"))
+                                            Text("Slim-fit clothes to flatter your physique")
+                                        }
+                                        .padding(.bottom, 0.1)
+                                        HStack {
+                                            Image(systemName: "checkmark.circle.fill")
+                                                .foregroundColor(Color("yellow"))
+                                            Text("Slim-fit clothes to flatter your physique")
+                                        }
+                                        .padding(.bottom, 0.1)
+                                        HStack {
+                                            Image(systemName: "checkmark.circle.fill")
+                                                .foregroundColor(Color("yellow"))
+                                            Text("Slim-fit clothes to flatter your physique")
+                                        }
+                                        .padding(.bottom, 0.1)
+                                    }
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    VStack (alignment: .leading){
+                                        
+                                        HStack {
+                                            Image(systemName: "x.circle.fill")
+                                                .foregroundColor(Color("red"))
+                                            Text("Slim-fit clothes to flatter your physiqueadgnflajfas physique physique physique physique physique physique physique physique physique ")
+                                        }
+                                        .padding(.bottom, 0.1)
+                                        HStack {
+                                            Image(systemName: "x.circle.fill")
+                                                .foregroundColor(Color("red"))
+                                            Text("Slim-fit clothes to flatter your physique physique physique physique physique")
+                                        }
+                                        .padding(.bottom, 0.1)
+                                        HStack {
+                                            Image(systemName: "x.circle.fill")
+                                                .foregroundColor(Color("red"))
+                                            Text("Slim-fit clothes to flatter your physique")
+                                        }
+                                        .padding(.bottom, 0.1)
+                                        HStack {
+                                            Image(systemName: "x.circle.fill")
+                                                .foregroundColor(Color("red"))
+                                            Text("Slim-fit clothes to flatter your physique")
+                                        }
+                                        .padding(.bottom, 0.1)
+                                        HStack {
+                                            Image(systemName: "x.circle.fill")
+                                                .foregroundColor(Color("red"))
+                                            Text("Slim-fit clothes to flatter your physique")
+                                        }
+                                        .padding(.bottom, 0.1)
+                                    }
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                }
+                                .font(.caption)
+                                .frame(maxWidth: .infinity, maxHeight: 140, alignment: .leading)
+                                
+                                Spacer()
+                                
+                            }
+                            .padding()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.leading)
                         }
                         
                         Spacer()
@@ -232,7 +253,7 @@ struct ProfileView: View {
                     .background(Color("secondary"))
                     .cornerRadius(20.0, corners: [.topLeft, .topRight])
                     
-                    
+                    Spacer()
                 }
                 
                 
@@ -243,6 +264,8 @@ struct ProfileView: View {
                         .frame(width: geo.size.width * 0.9 / 3.0,height: geo.size.height / 1.8)
                         .clipped()
                         .frame(maxWidth: .infinity,alignment:.trailing)
+                        .padding(.top,90)
+                        .padding(.trailing,20)
                     Spacer()
                 }
             }
