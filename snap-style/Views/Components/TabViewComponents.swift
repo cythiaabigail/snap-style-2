@@ -19,11 +19,11 @@ struct TabViewComponents: View {
                    Color("secondary"),
                    for: .tabBar)
             //example
-            ContentView().tabItem {
+            ProfileView().tabItem {
                 Label("Profile", systemImage: "person")
             }
         }.tint(Color("yellow")).onAppear() {
-            UITabBar.appearance().backgroundColor = .white
+            UITabBar.appearance().backgroundColor = UIColor(Color("secondary"))
         }
         .background(.white)
     }
