@@ -12,14 +12,15 @@ struct RecommendationView: View {
     let occationPickers : [String] = ["Formal", "Semi Formal", "Casual"]
     let piecePickers : [String] = ["Outter", "Pants", "Full"]
     let colorPickers : [String] = ["Red", "Green", "Blue"]
-    
-    @State var occationPick : String = "All Occation"
-    @State var piecePick : String = "All Piece"
-    @State var colorPick : String = "All Color"
+    let pinterestColumn = [GridItem(.flexible())]
+
+    @State var scrollPosition : CGPoint = CGPoint(x: 0.0, y: 0.0)
+    @State var occationPicks : [String] = []
+    @State var piecePicks : [String] = []
+    @State var colorPicks : [String] = []
     @State var isClothClicked : Bool = false
     @State var selectedStyle : ClothesStyle?
-    
-    let pinterestColumn = [GridItem(.flexible())]
+    @State var isFilterClicked : Bool = false
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: Color("secondary")]
@@ -55,18 +56,149 @@ struct RecommendationView: View {
                         Image(systemName: "heart").resizable().frame(width: 24.44, height: 22.41).foregroundColor(Color("secondary"))
                     }.padding(.bottom, 40)
                     
-                    HStack {
-                        Text("Filter").font(.system(size: 20, weight: .bold)).foregroundColor(Color("secondary"))
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        RecommendationPickerComponent(choosePicker: $occationPick, dataPickers: occationPickers)
-                        Spacer()
-                        RecommendationPickerComponent(choosePicker: $piecePick , dataPickers: piecePickers)
-                        Spacer()
-                        RecommendationPickerComponent(choosePicker: $colorPick, dataPickers: colorPickers)
-                    }
+                    ZStack {
+                        ScrollView(.horizontal) {
+                            HStack {
+                                HStack {
+                                    Button {
+                                    } label: {
+                                        HStack {
+                                            Image("filter_icon")
+                                            Text("Filter").font(.system(size: 20, weight: .bold)).foregroundColor(Color.white)
+                                        }
+                                    }
+                                    Spacer()
+                                }.hidden()
+                                
+                                Button {
+                                    if occationPicks.contains("Formal") {
+                                        occationPicks
+                                            .removeAll(where: {$0 == "Formal"})
+                                    } else {
+                                        occationPicks.append("Formal")
+                                    }
+                                } label: {
+                                    Text("Formal")
+                                        .font(.system(size: 13))
+                                        .padding(.horizontal, 18)
+                                        .padding(.vertical, 6)
+                                        .foregroundColor(occationPicks.contains("Formal") ? .white : .white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .stroke(occationPicks.contains("Formal") ? .white : .white, lineWidth: 1)
+                                        )
+                                        .background(occationPicks.contains("Formal") ? .gray : .black)
+                                        .cornerRadius(4)
+                                }
+                                
+                                Button {
+                                    if occationPicks.contains("Formal") {
+                                        occationPicks
+                                            .removeAll(where: {$0 == "Formal"})
+                                    } else {
+                                        occationPicks.append("Formal")
+                                    }
+                                } label: {
+                                    Text("Formal")
+                                        .font(.system(size: 13))
+                                        .padding(.horizontal, 18)
+                                        .padding(.vertical, 6)
+                                        .foregroundColor(occationPicks.contains("Formal") ? .white : .white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .stroke(occationPicks.contains("Formal") ? .white : .white, lineWidth: 1)
+                                        )
+                                        .background(occationPicks.contains("Formal") ? .gray : .black)
+                                        .cornerRadius(4)
+                                }
+                                
+                                Button {
+                                    if occationPicks.contains("Formal") {
+                                        occationPicks
+                                            .removeAll(where: {$0 == "Formal"})
+                                    } else {
+                                        occationPicks.append("Formal")
+                                    }
+                                } label: {
+                                    Text("Formal")
+                                        .font(.system(size: 13))
+                                        .padding(.horizontal, 18)
+                                        .padding(.vertical, 6)
+                                        .foregroundColor(occationPicks.contains("Formal") ? .white : .white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .stroke(occationPicks.contains("Formal") ? .white : .white, lineWidth: 1)
+                                        )
+                                        .background(occationPicks.contains("Formal") ? .gray : .black)
+                                        .cornerRadius(4)
+                                }
+                                
+                                Button {
+                                    if occationPicks.contains("Formal") {
+                                        occationPicks
+                                            .removeAll(where: {$0 == "Formal"})
+                                    } else {
+                                        occationPicks.append("Formal")
+                                    }
+                                } label: {
+                                    Text("Formal")
+                                        .font(.system(size: 13))
+                                        .padding(.horizontal, 18)
+                                        .padding(.vertical, 6)
+                                        .foregroundColor(occationPicks.contains("Formal") ? .white : .white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .stroke(occationPicks.contains("Formal") ? .white : .white, lineWidth: 1)
+                                        )
+                                        .background(occationPicks.contains("Formal") ? .gray : .black)
+                                        .cornerRadius(4)
+                                }
+                                
+                                Button {
+                                    if occationPicks.contains("Formal") {
+                                        occationPicks
+                                            .removeAll(where: {$0 == "Formal"})
+                                    } else {
+                                        occationPicks.append("Formal")
+                                    }
+                                } label: {
+                                    Text("Formal")
+                                        .font(.system(size: 13))
+                                        .padding(.horizontal, 18)
+                                        .padding(.vertical, 6)
+                                        .foregroundColor(occationPicks.contains("Formal") ? .white : .white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .stroke(occationPicks.contains("Formal") ? .white : .white, lineWidth: 1)
+                                        )
+                                        .background(occationPicks.contains("Formal") ? .gray : .black)
+                                        .cornerRadius(4)
+                                }
+                            }
+                            .background(
+                                GeometryReader { scrollPos in
+                                    Color.clear.preference(key: ScrollOffsetPreferenceKey.self, value: scrollPos.frame(in: .named("scroll")).origin)
+                                }
+                            )
+                            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { scrollValue in
+                                self.scrollPosition = scrollValue
+                            }
+                        }.scrollIndicators(.hidden)
+                        HStack {
+                            Button {
+                                isFilterClicked = true
+                            } label: {
+                                HStack {
+                                    Image("filter_icon")
+                                    Text("Filter").font(.system(size: 20, weight: .bold)).foregroundColor(Color.white)
+                                        .lineLimit(nil)
+                                        .truncationMode(.tail)
+                                        .frame(maxWidth: (50+scrollPosition.x-14), maxHeight: 40)
+                                }.background(.black)
+                            }
+                            Spacer()
+                        }
+                    }.frame(maxWidth: .infinity, maxHeight: 50)
                     
                     ScrollView {
                         HStack {
@@ -114,11 +246,24 @@ struct RecommendationView: View {
         .sheet(isPresented: $isClothClicked) {
             RecommendationBottomSheetView(isPreviewShowed: $isClothClicked)
         }
+        .sheet(isPresented: $isFilterClicked) {
+            RecommendationFilterView(chooseOccations: $occationPicks, choosePieces: $piecePicks, chooseColors: $colorPicks, isFilterAppear: $isFilterClicked)
+                .presentationDetents([.fraction(0.5)])
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(20)
+        }
     }
 }
 
 struct RecommendationView_Previews: PreviewProvider {
     static var previews: some View {
         RecommendationView()
+    }
+}
+
+struct ScrollOffsetPreferenceKey: PreferenceKey {
+    static var defaultValue: CGPoint = .zero
+
+    static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {
     }
 }
