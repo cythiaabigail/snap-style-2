@@ -11,7 +11,9 @@ struct RecommendationFilterView: View {
     @Binding var chooseOccations : [String]
     @Binding var choosePieces : [String]
     @Binding var chooseColors : [String]
+    @Binding var isFilterAppear : Bool
     @State var isFilterReseted : Bool = false
+    @State var onFilterValueChanged: Bool = false
     let occationPickers : [String] = ["Formal", "Semi Formal", "Casual"]
     let piecePickers : [String] = ["Outter", "Pants", "Full"]
     let colorPickers : [String] = ["Red", "Green", "Blue"]
@@ -126,9 +128,26 @@ struct RecommendationFilterView: View {
                         }
                     }.frame(maxWidth: .infinity, alignment: .leading)
                 }.scrollIndicators(.hidden)
+                
+                if onFilterValueChanged {
+                    Button {
+                        isFilterAppear.toggle()
+                    } label: {
+                        Text("Apply")
+                            .frame(maxWidth: .infinity)
+                            .font(.system(size: 12))
+                            .padding(.vertical, 5.5)
+                            .foregroundColor(.white)
+                            .background(.black)
+                            .cornerRadius(4)
+                            .padding(.top, 31)
+//                            .padding(.bottom, 24)
+                    }
+                }
             }.padding(.horizontal, 24)
                 .padding(.top, 42)
                 .onChange(of: chooseOccations) { _ in
+                    onFilterValueChanged.toggle()
                     if chooseOccations.count != 0 {
                         isFilterReseted = true
                     } else {
@@ -136,6 +155,7 @@ struct RecommendationFilterView: View {
                     }
                 }
                 .onChange(of: choosePieces) { _ in
+                    onFilterValueChanged.toggle()
                     if choosePieces.count != 0 {
                         isFilterReseted = true
                     } else {
@@ -143,18 +163,19 @@ struct RecommendationFilterView: View {
                     }
                 }
                 .onChange(of: chooseColors) { _ in
+                    onFilterValueChanged.toggle()
                     if chooseColors.count != 0 {
                         isFilterReseted = true
                     } else {
                         isFilterReseted = false
                     }
                 }
-        }
+        }.padding(.bottom, 24)
     }
 }
 
 struct RecommendationFilterView_Previews: PreviewProvider {
     static var previews: some View {
-        RecommendationFilterView(chooseOccations: .constant([]), choosePieces: .constant([]), chooseColors: .constant([]))
+        RecommendationFilterView(chooseOccations: .constant([]), choosePieces: .constant([]), chooseColors: .constant([]), isFilterAppear: .constant(true))
     }
 }

@@ -11,9 +11,7 @@ struct RecommendationView: View {
     let occationPickers : [String] = ["Formal", "Semi Formal", "Casual"]
     let piecePickers : [String] = ["Outter", "Pants", "Full"]
     let colorPickers : [String] = ["Red", "Green", "Blue"]
-    @State var occationPick : String = "All Occation"
-    @State var piecePick : String = "All Piece"
-    @State var colorPick : String = "All Color"
+    @State var scrollPosition : CGPoint = CGPoint(x: 0.0, y: 0.0)
     @State var occationPicks : [String] = []
     @State var piecePicks : [String] = []
     @State var colorPicks : [String] = []
@@ -26,6 +24,10 @@ struct RecommendationView: View {
     let listStyle = [ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto1", isFavorite: false),
                      ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto2", isFavorite: false),
                      ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto3", isFavorite: false),
+                     ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto4", isFavorite: false),
+                     ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto4", isFavorite: false),
+                     ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto4", isFavorite: false),
+                     ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto4", isFavorite: false),
                      ClothesStyle(id: UUID(), bodyShape: [BodyShape(id: UUID(), name: "Trapezoid", description: "", image: "", gender: Gender.man)], name: "baju renang", gender: Gender.man, colors: ["red"], occation: ["formal"], type: "set", image: "DummyPhoto4", isFavorite: false),
     ]
     
@@ -46,17 +48,149 @@ struct RecommendationView: View {
                         Image(systemName: "heart").resizable().frame(width: 24.44, height: 22.41).foregroundColor(Color.white)
                     }.padding(.bottom, 40)
                     
-                    HStack {
-                        Button {
-                            isFilterClicked = true
-                        } label: {
+                    ZStack {
+                        ScrollView(.horizontal) {
                             HStack {
-                                Image("filter_icon")
-                                Text("Filter").font(.system(size: 20, weight: .bold)).foregroundColor(Color.white)
+                                HStack {
+                                    Button {
+                                    } label: {
+                                        HStack {
+                                            Image("filter_icon")
+                                            Text("Filter").font(.system(size: 20, weight: .bold)).foregroundColor(Color.white)
+                                        }
+                                    }
+                                    Spacer()
+                                }.hidden()
+                                
+                                Button {
+                                    if occationPicks.contains("Formal") {
+                                        occationPicks
+                                            .removeAll(where: {$0 == "Formal"})
+                                    } else {
+                                        occationPicks.append("Formal")
+                                    }
+                                } label: {
+                                    Text("Formal")
+                                        .font(.system(size: 13))
+                                        .padding(.horizontal, 18)
+                                        .padding(.vertical, 6)
+                                        .foregroundColor(occationPicks.contains("Formal") ? .white : .white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .stroke(occationPicks.contains("Formal") ? .white : .white, lineWidth: 1)
+                                        )
+                                        .background(occationPicks.contains("Formal") ? .gray : .black)
+                                        .cornerRadius(4)
+                                }
+                                
+                                Button {
+                                    if occationPicks.contains("Formal") {
+                                        occationPicks
+                                            .removeAll(where: {$0 == "Formal"})
+                                    } else {
+                                        occationPicks.append("Formal")
+                                    }
+                                } label: {
+                                    Text("Formal")
+                                        .font(.system(size: 13))
+                                        .padding(.horizontal, 18)
+                                        .padding(.vertical, 6)
+                                        .foregroundColor(occationPicks.contains("Formal") ? .white : .white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .stroke(occationPicks.contains("Formal") ? .white : .white, lineWidth: 1)
+                                        )
+                                        .background(occationPicks.contains("Formal") ? .gray : .black)
+                                        .cornerRadius(4)
+                                }
+                                
+                                Button {
+                                    if occationPicks.contains("Formal") {
+                                        occationPicks
+                                            .removeAll(where: {$0 == "Formal"})
+                                    } else {
+                                        occationPicks.append("Formal")
+                                    }
+                                } label: {
+                                    Text("Formal")
+                                        .font(.system(size: 13))
+                                        .padding(.horizontal, 18)
+                                        .padding(.vertical, 6)
+                                        .foregroundColor(occationPicks.contains("Formal") ? .white : .white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .stroke(occationPicks.contains("Formal") ? .white : .white, lineWidth: 1)
+                                        )
+                                        .background(occationPicks.contains("Formal") ? .gray : .black)
+                                        .cornerRadius(4)
+                                }
+                                
+                                Button {
+                                    if occationPicks.contains("Formal") {
+                                        occationPicks
+                                            .removeAll(where: {$0 == "Formal"})
+                                    } else {
+                                        occationPicks.append("Formal")
+                                    }
+                                } label: {
+                                    Text("Formal")
+                                        .font(.system(size: 13))
+                                        .padding(.horizontal, 18)
+                                        .padding(.vertical, 6)
+                                        .foregroundColor(occationPicks.contains("Formal") ? .white : .white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .stroke(occationPicks.contains("Formal") ? .white : .white, lineWidth: 1)
+                                        )
+                                        .background(occationPicks.contains("Formal") ? .gray : .black)
+                                        .cornerRadius(4)
+                                }
+                                
+                                Button {
+                                    if occationPicks.contains("Formal") {
+                                        occationPicks
+                                            .removeAll(where: {$0 == "Formal"})
+                                    } else {
+                                        occationPicks.append("Formal")
+                                    }
+                                } label: {
+                                    Text("Formal")
+                                        .font(.system(size: 13))
+                                        .padding(.horizontal, 18)
+                                        .padding(.vertical, 6)
+                                        .foregroundColor(occationPicks.contains("Formal") ? .white : .white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .stroke(occationPicks.contains("Formal") ? .white : .white, lineWidth: 1)
+                                        )
+                                        .background(occationPicks.contains("Formal") ? .gray : .black)
+                                        .cornerRadius(4)
+                                }
                             }
+                            .background(
+                                GeometryReader { scrollPos in
+                                    Color.clear.preference(key: ScrollOffsetPreferenceKey.self, value: scrollPos.frame(in: .named("scroll")).origin)
+                                }
+                            )
+                            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { scrollValue in
+                                self.scrollPosition = scrollValue
+                            }
+                        }.scrollIndicators(.hidden)
+                        HStack {
+                            Button {
+                                isFilterClicked = true
+                            } label: {
+                                HStack {
+                                    Image("filter_icon")
+                                    Text("Filter").font(.system(size: 20, weight: .bold)).foregroundColor(Color.white)
+                                        .lineLimit(nil)
+                                        .truncationMode(.tail)
+                                        .frame(maxWidth: (50+scrollPosition.x-14), maxHeight: 40)
+                                }.background(.black)
+                            }
+                            Spacer()
                         }
-                        Spacer()
-                    }
+                    }.frame(maxWidth: .infinity, maxHeight: 50)
                     
                     ScrollView {
                         HStack {
@@ -110,7 +244,7 @@ struct RecommendationView: View {
             RecommendationBottomSheetView(isPreviewShowed: $isClothClicked)
         }
         .sheet(isPresented: $isFilterClicked) {
-            RecommendationFilterView(chooseOccations: $occationPicks, choosePieces: $piecePicks, chooseColors: $colorPicks)
+            RecommendationFilterView(chooseOccations: $occationPicks, choosePieces: $piecePicks, chooseColors: $colorPicks, isFilterAppear: $isFilterClicked)
                 .presentationDetents([.fraction(0.5)])
                 .presentationDragIndicator(.visible)
                 .presentationCornerRadius(20)
@@ -121,5 +255,12 @@ struct RecommendationView: View {
 struct RecommendationView_Previews: PreviewProvider {
     static var previews: some View {
         RecommendationView()
+    }
+}
+
+struct ScrollOffsetPreferenceKey: PreferenceKey {
+    static var defaultValue: CGPoint = .zero
+
+    static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {
     }
 }

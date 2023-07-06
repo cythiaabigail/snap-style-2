@@ -12,16 +12,17 @@ struct TabViewComponents: View {
     var body: some View {
         TabView {
             RecommendationView().tabItem {
-                Label("", systemImage: "house")
+                Label("Your Styles", systemImage: "tshirt")
             }
             
             //example
             ContentView().tabItem {
-                Label("", systemImage: "person")
+                Label("Profile", systemImage: "person")
             }
         }.tint(Color("yellow")).onAppear() {
             UITabBar.appearance().backgroundColor = .white
         }
+        .background(.white)
     }
 }
 
