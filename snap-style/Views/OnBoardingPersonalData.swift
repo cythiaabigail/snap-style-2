@@ -44,6 +44,7 @@ struct OnBoardingPersonalData: View {
                             .font(.title3)
                         HStack {
                             TextField("", text: $height)
+                                .keyboardType(.numberPad)
                                 .placeholder(when: height.isEmpty) {
                                     Text("Input your height").foregroundColor(.gray)}
                             
@@ -62,6 +63,7 @@ struct OnBoardingPersonalData: View {
                             .font(.title3)
                         HStack {
                             TextField("", text: $weight)
+                                .keyboardType(.numberPad)
                                 .placeholder(when: weight.isEmpty) {
                                     Text("Input your weight").foregroundColor(.gray)}
                                 .padding()

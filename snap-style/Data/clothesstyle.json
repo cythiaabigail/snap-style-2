@@ -1,0 +1,56 @@
+[
+        {
+            "name": "Testing Clothes Style",
+            "bodyShape": [
+                {
+                    "name": "Rectangle",
+                    "description": "A rectangular body shape is characterized by a relatively balanced proportion between the bust, waist, and hips. The waist is not significantly defined, and there is minimal curve between the waist and hips, resulting in a more straight-up-and-down figure.",
+                    "image": "link1",
+                    "gender": "female"
+                }
+            ],
+            "description": "Testing Description",
+            "gender": "male",
+            "colors": ["red"],
+            "occation": ["formal"],
+            "type": "Lorem",
+            "image": "DummyPhoto2",
+            "isFavorite": false
+        },
+        {
+            "name": "Testing Clothes Style",
+            "bodyShape": [
+                {
+                    "name": "Rectangle",
+                    "description": "A rectangular body shape is characterized by a relatively balanced proportion between the bust, waist, and hips. The waist is not significantly defined, and there is minimal curve between the waist and hips, resulting in a more straight-up-and-down figure.",
+                    "image": "link1",
+                    "gender": "female"
+                }
+            ],
+            "description": "Testing Description",
+            "gender": "male",
+            "colors": ["red"],
+            "occation": ["formal"],
+            "type": "Lorem",
+            "image": "DummyPhoto1",
+            "isFavorite": false
+        },
+        {
+            "name": "Testing Clothes Style",
+            "bodyShape": [
+                {
+                    "name": "Rectangle",
+                    "description": "A rectangular body shape is characterized by a relatively balanced proportion between the bust, waist, and hips. The waist is not significantly defined, and there is minimal curve between the waist and hips, resulting in a more straight-up-and-down figure.",
+                    "image": "link1",
+                    "gender": "female"
+                }
+            ],
+            "description": "Testing Description",
+            "gender": "male",
+            "colors": ["red"],
+            "occation": ["formal"],
+            "type": "Lorem",
+            "image": "DummyPhoto3",
+            "isFavorite": false
+        }
+]
