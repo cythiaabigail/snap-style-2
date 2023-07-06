@@ -75,6 +75,7 @@ struct ProfileView: View {
                                             TextField("Height", text: $height)
                                                 .textFieldStyle(PlainTextFieldStyle())
                                                 .padding(.bottom, 5)
+                                                .keyboardType(.numberPad)
                                                 .overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
                                         }
                                         Spacer()
@@ -97,6 +98,7 @@ struct ProfileView: View {
                                             TextField("Weight", text: $weight)
                                                 .textFieldStyle(PlainTextFieldStyle())
                                                 .padding(.bottom, 5)
+                                                .keyboardType(.numberPad)
                                                 .overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
                                         }
                                         Spacer()
