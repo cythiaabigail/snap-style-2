@@ -25,10 +25,7 @@ struct ProfileView: View {
             
             ZStack {
                 VStack  (alignment: .leading){
-                    
                     VStack (alignment: .leading){
-                        
-                        
                         Text("Trapezoid Body Shape")
                             .font(.title2)
                             .fontWeight(.bold)

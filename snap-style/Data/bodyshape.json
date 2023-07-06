@@ -1,0 +1,62 @@
+[
+{
+	"name": "Rectangle",
+	"description": "A rectangular body shape is characterized by a relatively balanced proportion between the bust, waist, and hips. The waist is not significantly defined, and there is minimal curve between the waist and hips, resulting in a more straight-up-and-down figure.",
+	"image": "link1",
+	"gender": "female"
+},
+{
+	"name": "Inverted Triangle",
+	"description": "An inverted triangle body shape is characterized by broader shoulders, a wider bust, and a narrower waist and hips. The upper body, especially the shoulders and bust, is more prominent compared to the lower body, creating a triangle-like shape with the base at the shoulders and the point at the hips.",
+	"image": "link1",
+	"gender": "female"
+},
+{
+	"name": "Hourglass",
+	"description": "An hourglass body shape is characterized by a well-defined waistline and balanced proportions between the bust and hips. The bust and hips are similar in width, with a narrower waist creating an hourglass silhouette.",
+	"image": "link1",
+	"gender": "female"
+},
+{
+	"name": "Pear",
+	"description": "A pear body shape is characterized by wider hips, fuller thighs, and a narrower bust and shoulders. The lower body is more prominent compared to the upper body, creating a triangular silhouette.",
+	"image": "link1",
+	"gender": "female"
+},
+{
+	"name": "Apple",
+	"description": "An apple body shape is characterized by a larger bust, rounded shoulders, a fuller midsection, and slimmer arms, legs, and hips. The weight tends to be concentrated in the abdominal area, giving the body a rounder or oval appearance.",
+	"image": "link1",
+	"gender": "female"
+},
+{
+	"name": "Rectangle",
+	"description": "The rectangle body shape for men is characterized by a relatively balanced proportion between the chest, waist, and hips, resulting in a straight-up-and-down figure. This body shape is often associated with an athletic or slim build.",
+	"image": "link1",
+	"gender": "female"
+},
+{
+	"name": "Inverted Triangle",
+	"description": "The inverted triangle body shape for men is characterized by broad shoulders and chest in proportion to a narrower waist and hips, creating a V-shaped silhouette. This body shape is often associated with a naturally athletic or muscular build.",
+	"image": "link1",
+	"gender": "female"
+},
+{
+	"name": "Trapezoid",
+	"description": "The trapezoid body shape for men is characterized by broad shoulders and chest that taper down to a narrower waist, creating a V-shaped silhouette similar to an inverted trapezoid.",
+	"image": "link1",
+	"gender": "female"
+},
+{
+	"name": "Triangle",
+	"description": "The triangle body shape for men is characterized by broader hips and thighs in relation to the shoulders and chest, creating a shape that resembles an inverted triangle.",
+	"image": "link1",
+	"gender": "female"
+},
+{
+	"name": "Oval",
+	"description": "The oval body shape for men is characterized by a rounder or fuller midsection, often with less prominent shoulders and narrower hips. The weight tends to be concentrated in the abdominal area, creating a more rounded appearance.",
+	"image": "link1",
+	"gender": "female"
+}
+]

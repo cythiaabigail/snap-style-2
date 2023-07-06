@@ -24,6 +24,9 @@ struct ContentView: View {
                 TabViewComponents()
             }
         }
+        .onAppear {
+            print(getBodyShapes() ?? "No Data")
+        }
     }
 }
 
