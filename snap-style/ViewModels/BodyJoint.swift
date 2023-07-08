@@ -9,9 +9,11 @@ import Vision
 import SwiftUI
 
 class BodyJoint {
-    var jointCoordinates : [CGPoint] = []
-    
-    func detectJoin(image: UIImage) -> [CGPoint] {
+
+    func detectJoin(image: UIImage) -> [String: CGPoint] {
+        
+        var jointCoordinates: [String: CGPoint] = [:]
+        
         guard let ciImage = CIImage(image: image) else {
             return jointCoordinates
         }
@@ -34,8 +36,8 @@ class BodyJoint {
                         print("\(jointName.rawValue)")
                         let coordinate = point.location
                         print(jointName.rawValue)
-                        if (jointName.rawValue == "left_shoulder_1_joint" || jointName.rawValue == "right_shoulder_1_joint" || jointName.rawValue == "left_upLeg_joint" || jointName.rawValue == "right_upLeg_joint") {
-                            self.jointCoordinates.append(coordinate)
+                        if (jointName.rawValue == "left_shoulder_1_joint" || jointName.rawValue == "right_shoulder_1_joint" || jointName.rawValue == "left_upLeg_joint" || jointName.rawValue == "right_upLeg_joint" || jointName.rawValue == "left_foot_joint" || jointName.rawValue == "right_ear_joint") {
+                            jointCoordinates[jointName.rawValue] = coordinate
                         }
                     }
                 }
@@ -53,8 +55,5 @@ class BodyJoint {
         }
         
         return jointCoordinates
-    }
-    
-    func getAnotherJoint() {
     }
 }

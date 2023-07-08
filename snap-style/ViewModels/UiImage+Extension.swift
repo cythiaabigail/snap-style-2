@@ -8,26 +8,24 @@
 import SwiftUI
 
 extension UIImage {
-    func getPixelColor(pos: CGPoint) -> UIColor? {
-        let height = self.size.height
-        let width = self.size.width
+    func isColorWhite(at point: CGPoint) -> Bool {
+        let image = self
         
-        guard pos.x >= 0 && pos.x < width && pos.y >= 0 && pos.y < height,
-            let cgImage = cgImage,
-            let provider = cgImage.dataProvider,
-            let providerData = provider.data,
-            let data = CFDataGetBytePtr(providerData) else {
-            return nil
+        let cgImage = self.cgImage
+        
+        let pixelData = cgImage!.dataProvider?.data
+        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+        let pixelInfo: Int = ((Int(image.size.width) * Int(point.y)) + Int(point.x)) * 4
+        
+        let red = data[pixelInfo]
+        let green = data[pixelInfo + 1]
+        let blue = data[pixelInfo + 2]
+        let alpha = data[pixelInfo + 3]
+        
+        if red > 250 && green > 250 && blue > 250 {
+            return true
         }
-
-        let numberOfComponents = 4.0
-        let pixelData : Int = Int((width * pos.y + pos.x) * numberOfComponents)
-
-        let r = CGFloat(data[pixelData]) / 255.0
-        let g = CGFloat(data[pixelData + 1]) / 255.0
-        let b = CGFloat(data[pixelData + 2]) / 255.0
-        let a = CGFloat(data[pixelData + 3]) / 255.0
-
-        return UIColor(red: r, green: g, blue: b, alpha: a)
+        
+        return false
     }
 }
