@@ -10,6 +10,7 @@ import SwiftUI
 struct RecommendationBottomSheetView: View {
     
     @Binding var isPreviewShowed: Bool
+    @Binding var selectedItem: ClothesStyle?
     
     var body: some View {
         ZStack {
@@ -31,7 +32,7 @@ struct RecommendationBottomSheetView: View {
                 .padding(.top, 20)
                 .padding(.horizontal, 30)
                 Spacer().frame(height: 10)
-                Image("recommendation_preview_example")
+                Image(selectedItem?.image ?? "")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 150)
@@ -40,30 +41,26 @@ struct RecommendationBottomSheetView: View {
                         .background(Color("primary"))
                         .ignoresSafeArea()
                     VStack (alignment: .leading) {
-                        Text("Full Set Suit & Trousers")
+                        Text(selectedItem?.name ?? "")
                             .foregroundColor(Color("secondary"))
                             .fontWeight(.bold)
                             .font(.title2)
                         ScrollView(.horizontal) {
                             HStack {
-                                Text("Formal")
-                                    .foregroundColor(Color("secondary"))
-                                    .padding(.vertical, 4)
-                                    .padding(.horizontal,10)
-                                    .border(Color("secondary"))
-                                    .fontWeight(.bold)
-                                Text("Semi-Formal")
-                                    .foregroundColor(Color("secondary"))
-                                    .padding(.vertical, 4)
-                                    .padding(.horizontal,10)
-                                    .border(Color("secondary"))
-                                    .fontWeight(.bold)
+                                ForEach(selectedItem?.occasion ?? [], id: \.self) { occasion in
+                                    Text(occasion)
+                                        .foregroundColor(Color("secondary"))
+                                        .padding(.vertical, 4)
+                                        .padding(.horizontal,10)
+                                        .border(Color("secondary"))
+                                        .fontWeight(.bold)
+                                }
                             }
                         }
                         Spacer()
                             .frame(height: 25)
                         ScrollView {
-                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+                            Text(selectedItem?.description ?? "No Description")
                                 .foregroundColor(Color("secondary"))
                         }
                     }
@@ -77,6 +74,6 @@ struct RecommendationBottomSheetView: View {
 
 struct RecommendationBottomSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        RecommendationBottomSheetView(isPreviewShowed: .constant(false))
+        RecommendationBottomSheetView(isPreviewShowed: .constant(false), selectedItem: .constant(clothesStyle![0]))
     }
 }

@@ -1,39 +1,5 @@
 [
     {
-        "bodyShape": [{
-                "name": "Inverted Triangle",
-                "description": "The inverted triangle body shape for men is characterized by broad shoulders and chest in proportion to a narrower waist and hips, creating a V-shaped silhouette. This body shape is often associated with a naturally athletic or muscular build.",
-                "image": "link1",
-                "gender": "male"
-            },
-            {
-                "name": "Trapezoid",
-                "description": "The trapezoid body shape for men is characterized by broad shoulders and chest that taper down to a narrower waist, creating a V-shaped silhouette similar to an inverted trapezoid.",
-                "image": "link1",
-                "gender": "male"
-            }
-        ],
-        "name": "White Bomber Jacket with Patch",
-        "description": "Make a cosmic statement with this white bomber jacket adorned with space-themed patches. Pair it with black slim-fit jeans and white high-top sneakers for a modern and urban-inspired look that captures the spirit of exploration.",
-        "gender": "male",
-        "colors": ["White"],
-        "occasion": ["Casual"],
-        "type": "outer",
-        "image": "bomber_outer1",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [],
-        "name": "Knit Vest",
-        "description": "Add a pop of color to your summer wardrobe with this sleeveless outer vest featuring horizontal stripes in green and blue. Pair it with white tailored shorts and brown leather sandals for a fresh and vibrant beach-ready look.",
-        "gender": "male",
-        "colors": ["Green", "Blue"],
-        "occasion": ["Casual", "Semi-Formal"],
-        "type": "outer",
-        "image": "vest_outer2",
-        "isFavorite": false
-    },
-    {
         "bodyShape": [],
         "name": "Puffer Winter Jacket",
         "description": "Bundle up in style with an army green puffer winter jacket. The quilted design and cozy insulation provide both warmth and a trendy look, making it a perfect choice for the chilly season.",
@@ -429,28 +395,6 @@
         "occasion": ["Casual", "Semi-Formal"],
         "type": "outer",
         "image": "overcoat_outer34",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [],
-        "name": "",
-        "description": "",
-        "gender": "male",
-        "colors": [],
-        "occasion": [],
-        "type": "outer",
-        "image": "",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [],
-        "name": "",
-        "description": "",
-        "gender": "male",
-        "colors": [],
-        "occasion": [],
-        "type": "outer",
-        "image": "",
         "isFavorite": false
     },
     {
@@ -983,28 +927,6 @@
     },
     {
         "bodyShape": [],
-        "name": "",
-        "description": "",
-        "gender": "male",
-        "colors": [],
-        "occasion": ["Casual"],
-        "type": "bottom",
-        "image": "",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [],
-        "name": "",
-        "description": "",
-        "gender": "male",
-        "colors": [],
-        "occasion": ["Casual"],
-        "type": "bottom",
-        "image": "",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [],
         "name": "Leather Jacket and Denim Shorts Set",
         "description": "",
         "gender": "male",
@@ -1023,17 +945,6 @@
         "occasion": ["Casual", "Semi-Formal"],
         "type": "set",
         "image": "cargo_outer_set2",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [],
-        "name": "Flower Patterned Tshirt and Cargo Short",
-        "description": "Unleash your inner adventurer with the flower-patterned t-shirt and cargo shorts ensemble that epitomizes casual coolness. The floral print showcases your fun and outgoing personality, while the cargo shorts offer convenience and versatility. This combination is perfect for outdoor activities or simply enjoying a day of relaxation in style.",
-        "gender": "male",
-        "colors": ["Blue", "Beige"],
-        "occasion": ["Casual"],
-        "type": "set",
-        "image": "shorts_shirt_set3",
         "isFavorite": false
     },
     {
@@ -1253,17 +1164,6 @@
     },
     {
         "bodyShape": [],
-        "name": "White Tshirt and Gray Short",
-        "description": "The white tshirt creates a fresh and clean aesthetic, perfect for a casual and relaxed style. Paired with gray shorts, you achieve a balanced and well-coordinated look that is both comfortable and fashionable, ideal for warm weather or leisure activities.",
-        "gender": "male",
-        "colors": ["White", "Gray"],
-        "occasion": ["Casual"],
-        "type": "set",
-        "image": "tshirt_short_set22",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [],
         "name": "Striped Tshirt and Black Jeans",
         "description": "The striped pattern on the T-shirt showcases your individual style and flair, while the black jeans offer a sleek and versatile base. This combination effortlessly blends fashion and comfort, making it a go-to choice for those who want to look casual while making a statement with their outfit.",
         "gender": "male",
@@ -1315,17 +1215,6 @@
         "occasion": ["Casual"],
         "type": "set",
         "image": "stripedtshirt_sandals_set27",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [],
-        "name": "Black Leather Jacket and Trousers",
-        "description": "The black leather jacket's rebellious and iconic presence adds an element of edge and individuality to your outfit, while the trousers offer a sleek and versatile base. Whether you're attending a social gathering, going for a night on the town, or simply want to showcase your unique style, this ensemble ensures you look effortlessly fashionable and ready to make a bold entrance.",
-        "gender": "male",
-        "colors": ["Black"],
-        "occasion": ["Casual", "Semi-Formal"],
-        "type": "set",
-        "image": "leatherjacket_set28",
         "isFavorite": false
     },
     {
@@ -1484,28 +1373,6 @@
         "occasion": ["Formal"],
         "type": "set",
         "image": "notiebluesuit_set41",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [],
-        "name": "",
-        "description": "",
-        "gender": "male",
-        "colors": [],
-        "occasion": [],
-        "type": "set",
-        "image": "",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [],
-        "name": "",
-        "description": "",
-        "gender": "male",
-        "colors": [],
-        "occasion": [],
-        "type": "set",
-        "image": "",
         "isFavorite": false
     },
     {
@@ -1789,22 +1656,6 @@
     },
     {
         "bodyShape": [{
-            "name": "Trapezoid",
-            "description": "The trapezoid body shape for men is characterized by broad shoulders and chest that taper down to a narrower waist, creating a V-shaped silhouette similar to an inverted trapezoid.",
-            "image": "link1",
-            "gender": "male"
-        }],
-        "name": "White Shirt",
-        "description": "Add a dose of charm to your casual wardrobe with this white patterned shirt. The intricate design on the white background creates a relaxed yet stylish look. Pair it with light wash jeans and loafers for a laid-back yet put-together ensemble.",
-        "gender": "male",
-        "colors": ["White"],
-        "occasion": [],
-        "type": "top",
-        "image": "_top15",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [{
                 "name": "Inverted Triangle",
                 "description": "The inverted triangle body shape for men is characterized by broad shoulders and chest in proportion to a narrower waist and hips, creating a V-shaped silhouette. This body shape is often associated with a naturally athletic or muscular build.",
                 "image": "link1",
@@ -2073,28 +1924,6 @@
         "occasion": ["Casual", "Semi-Formal"],
         "type": "top",
         "image": "vneck_top27",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [],
-        "name": "",
-        "description": "",
-        "gender": "male",
-        "colors": [],
-        "occasion": [],
-        "type": "top",
-        "image": "",
-        "isFavorite": false
-    },
-    {
-        "bodyShape": [],
-        "name": "",
-        "description": "",
-        "gender": "male",
-        "colors": [],
-        "occasion": [],
-        "type": "top",
-        "image": "",
         "isFavorite": false
     }
 ]

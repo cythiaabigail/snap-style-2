@@ -250,7 +250,7 @@ struct RecommendationView: View {
                     .background(Color.black)
         }
         .sheet(isPresented: $isClothClicked) {
-            RecommendationBottomSheetView(isPreviewShowed: $isClothClicked)
+            RecommendationBottomSheetView(isPreviewShowed: $isClothClicked, selectedItem: $selectedStyle)
         }
         .sheet(isPresented: $isFilterClicked) {
             RecommendationFilterView(chooseOccations: $occationPicks, choosePieces: $piecePicks, chooseColors: $colorPicks, isFilterAppear: $isFilterClicked)
