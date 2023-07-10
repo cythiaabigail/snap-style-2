@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A55FFA62A5958D400BAFCE1 /* BodyCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55FFA52A5958D400BAFCE1 /* BodyCalculation.swift */; };
 		6A5C93F52A56DAE0009EF637 /* ScanningBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C93F42A56DAE0009EF637 /* ScanningBody.swift */; };
 		6A5C93F72A56E664009EF637 /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C93F62A56E664009EF637 /* Testing.swift */; };
 		6A5C93F92A56F27D009EF637 /* BodyJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C93F82A56F27D009EF637 /* BodyJoint.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A55FFA52A5958D400BAFCE1 /* BodyCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyCalculation.swift; sourceTree = "<group>"; };
 		6A5C93F42A56DAE0009EF637 /* ScanningBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningBody.swift; sourceTree = "<group>"; };
 		6A5C93F62A56E664009EF637 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 		6A5C93F82A56F27D009EF637 /* BodyJoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyJoint.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				6A5C93F42A56DAE0009EF637 /* ScanningBody.swift */,
+				6A55FFA52A5958D400BAFCE1 /* BodyCalculation.swift */,
 				6A5C93F82A56F27D009EF637 /* BodyJoint.swift */,
 				6A5C93FA2A56F69B009EF637 /* UiImage+Extension.swift */,
 			);
@@ -193,6 +196,7 @@
 				6A5C93F52A56DAE0009EF637 /* ScanningBody.swift in Sources */,
 				6A5C93F72A56E664009EF637 /* Testing.swift in Sources */,
 				C0835D722A4ACA4400D0DA96 /* DummyComponent.swift in Sources */,
+				6A55FFA62A5958D400BAFCE1 /* BodyCalculation.swift in Sources */,
 				C07679FC2A4ABB5400CEE111 /* Persistence.swift in Sources */,
 				6A5C93F92A56F27D009EF637 /* BodyJoint.swift in Sources */,
 				6A5C93FB2A56F69B009EF637 /* UiImage+Extension.swift in Sources */,
@@ -327,7 +331,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"snap-style/Preview Content\"";
-				DEVELOPMENT_TEAM = AHLML969C8;
+				DEVELOPMENT_TEAM = 9CPQ5HZ2TL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -33,10 +33,11 @@ class BodyJoint {
                     }
                     
                     for (jointName, point) in recognizedPoints {
-                        print("\(jointName.rawValue)")
-                        let coordinate = point.location
+                        var coordinate = point.location
                         print(jointName.rawValue)
-                        if (jointName.rawValue == "left_shoulder_1_joint" || jointName.rawValue == "right_shoulder_1_joint" || jointName.rawValue == "left_upLeg_joint" || jointName.rawValue == "right_upLeg_joint" || jointName.rawValue == "left_foot_joint" || jointName.rawValue == "right_ear_joint") {
+                        if (jointName.rawValue == "left_shoulder_1_joint" || jointName.rawValue == "right_shoulder_1_joint" || jointName.rawValue == "left_upLeg_joint" || jointName.rawValue == "right_upLeg_joint" || jointName.rawValue == "left_foot_joint" || jointName.rawValue == "neck_1_joint") {
+                            coordinate.x = coordinate.x * image.size.width
+                            coordinate.y = (1-coordinate.y) * image.size.height
                             jointCoordinates[jointName.rawValue] = coordinate
                         }
                     }
@@ -55,5 +56,84 @@ class BodyJoint {
         }
         
         return jointCoordinates
+    }
+    
+    private func createNewJoint(humanJoints: [String: CGPoint]) {
+        
+    }
+    
+    func configJoint(humanJoints : [String: CGPoint], image: UIImage) -> [String: CGPoint] {
+        var humanJointsConfigured : [String: CGPoint] = [:]
+        
+        for humanJoint in humanJoints {
+//            print("\(humanJoint.key)")
+            if humanJoint.key == "left_shoulder_1_joint" {
+                //testing purpose
+                var testJoint = jointToVerticalConfiguration(humanJoint: humanJoint.value, image: image, isLeft: true)
+                testJoint.x = testJoint.x/image.size.width
+                testJoint.y = testJoint.y/image.size.height
+                humanJointsConfigured[humanJoint.key] = testJoint
+//                humanJointsConfigured[humanJoint.key] = jointToLeft(humanJoint: humanJoint.value, image: image)
+            } else if humanJoint.key == "right_shoulder_1_joint" {
+                //testing purpose
+                var testJoint = jointToVerticalConfiguration(humanJoint: humanJoint.value, image: image, isLeft: false)
+                testJoint.x = testJoint.x/image.size.width
+                testJoint.y = testJoint.y/image.size.height
+                humanJointsConfigured[humanJoint.key] = testJoint
+//                humanJointsConfigured[humanJoint.key] = jointToLeft(humanJoint: humanJoint.value, image: image)
+            } else if humanJoint.key == "neck_1_joint" {
+                var testJoint = jointToHorizontalConfiguration(humanJoint: humanJoint.value, image: image, isUp: true)
+                testJoint.x = testJoint.x/image.size.width
+                testJoint.y = testJoint.y/image.size.height
+                humanJointsConfigured[humanJoint.key] = testJoint
+            }
+            else if humanJoint.key == "left_foot_joint" {
+                var testJoint = jointToHorizontalConfiguration(humanJoint: humanJoint.value, image: image, isUp: false)
+                testJoint.x = testJoint.x/image.size.width
+                testJoint.y = testJoint.y/image.size.height
+                humanJointsConfigured[humanJoint.key] = testJoint
+            }
+        }
+        
+        return humanJointsConfigured
+    }
+    
+    private func jointToVerticalConfiguration(humanJoint : CGPoint, image: UIImage, isLeft: Bool) -> CGPoint {
+        var cgPointWhite : CGPoint = humanJoint
+
+        while image.isColorWhite(at: cgPointWhite) {
+            cgPointWhite.x = cgPointWhite.x + (isLeft ? -50 : 50)
+        }
+
+        return cgPointWhite
+    }
+
+
+    private func jointToHorizontalConfiguration(humanJoint : CGPoint, image: UIImage, isUp : Bool) -> CGPoint {
+        var cgPointWhite : CGPoint = humanJoint
+
+        while image.isColorWhite(at: cgPointWhite) {
+            cgPointWhite.y = cgPointWhite.y + (isUp ? -50 : 50)
+        }
+
+        return cgPointWhite
+    }
+    
+    func jointRange(firstJoint: CGPoint, secondJoint: CGPoint, sizePerPixel: CGFloat, image: UIImage) -> CGFloat {
+        var jaraks = 0.0
+        var firstPoint = firstJoint
+        var secondPoint = secondJoint
+        firstPoint.x = firstPoint.x * image.size.width
+        firstPoint.y = firstPoint.y * image.size.height
+        secondPoint.x = secondPoint.x * image.size.width
+        secondPoint.y = secondPoint.y * image.size.height
+        
+        if firstJoint.y != secondJoint.y {
+            let rangeX = abs(firstPoint.x-secondPoint.x)
+            let rangeY = abs(firstPoint.y-secondPoint.y)
+            let jarak = (pow(rangeX, 2)) + (pow(rangeY, 2))
+            jaraks = sqrt(jarak)
+        }
+        return jaraks * sizePerPixel
     }
 }
