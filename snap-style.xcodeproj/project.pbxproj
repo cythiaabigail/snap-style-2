@@ -12,6 +12,7 @@
 		6A1D54262A4ACBEB00F1A0B7 /* RecommendationPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54252A4ACBEB00F1A0B7 /* RecommendationPickerComponent.swift */; };
 		6A1D54282A4AD01500F1A0B7 /* ClothesStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54272A4AD01500F1A0B7 /* ClothesStyle.swift */; };
 		6A1D542A2A4AD0C900F1A0B7 /* BodyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D54292A4AD0C900F1A0B7 /* BodyShape.swift */; };
+		6A95E3802A51734D00558558 /* RecommendationFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A95E37F2A51734D00558558 /* RecommendationFilterView.swift */; };
 		77427F192A4AC16B0064DA28 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F182A4AC16B0064DA28 /* OnBoardingView.swift */; };
 		77427F1B2A4AC1920064DA28 /* OnBoardingGetStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F1A2A4AC1920064DA28 /* OnBoardingGetStarted.swift */; };
 		77427F1D2A4AC1AC0064DA28 /* OnBoardingGenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77427F1C2A4AC1AC0064DA28 /* OnBoardingGenderPicker.swift */; };
@@ -23,7 +24,6 @@
 		C03474542A56A0ED0027CEDC /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03474532A56A0ED0027CEDC /* ModelData.swift */; };
 		C03474562A56A58B0027CEDC /* clothesstyle.json in Resources */ = {isa = PBXBuildFile; fileRef = C03474552A56A58B0027CEDC /* clothesstyle.json */; };
 		C0593CBD2A4C1C4300667538 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0593CBC2A4C1C4300667538 /* Enums.swift */; };
-		6A95E3802A51734D00558558 /* RecommendationFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A95E37F2A51734D00558558 /* RecommendationFilterView.swift */; };
 		C07679F32A4ABB5300CEE111 /* SnapStyleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07679F22A4ABB5300CEE111 /* SnapStyleApp.swift */; };
 		C07679F52A4ABB5300CEE111 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07679F42A4ABB5300CEE111 /* ContentView.swift */; };
 		C07679F72A4ABB5400CEE111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C07679F62A4ABB5400CEE111 /* Assets.xcassets */; };
@@ -33,6 +33,7 @@
 		C0767A0C2A4AC2A300CEE111 /* ScanResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0767A0B2A4AC2A300CEE111 /* ScanResultView.swift */; };
 		C0835D722A4ACA4400D0DA96 /* DummyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0835D712A4ACA4400D0DA96 /* DummyComponent.swift */; };
 		C0835D752A4ACD9700D0DA96 /* RecommendationBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0835D742A4ACD9700D0DA96 /* RecommendationBottomSheetView.swift */; };
+		C0C5981D2A5BF1E400D4C022 /* clothes.json in Resources */ = {isa = PBXBuildFile; fileRef = C0C5981C2A5BF1E400D4C022 /* clothes.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		6A1D54252A4ACBEB00F1A0B7 /* RecommendationPickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationPickerComponent.swift; sourceTree = "<group>"; };
 		6A1D54272A4AD01500F1A0B7 /* ClothesStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesStyle.swift; sourceTree = "<group>"; };
 		6A1D54292A4AD0C900F1A0B7 /* BodyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyShape.swift; sourceTree = "<group>"; };
+		6A95E37F2A51734D00558558 /* RecommendationFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationFilterView.swift; sourceTree = "<group>"; };
 		77427F182A4AC16B0064DA28 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		77427F1A2A4AC1920064DA28 /* OnBoardingGetStarted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingGetStarted.swift; path = "snap-style/Views/OnBoardingGetStarted.swift"; sourceTree = SOURCE_ROOT; };
 		77427F1C2A4AC1AC0064DA28 /* OnBoardingGenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingGenderPicker.swift; path = "snap-style/Views/OnBoardingGenderPicker.swift"; sourceTree = SOURCE_ROOT; };
@@ -52,7 +54,6 @@
 		C03474532A56A0ED0027CEDC /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		C03474552A56A58B0027CEDC /* clothesstyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = clothesstyle.json; sourceTree = "<group>"; };
 		C0593CBC2A4C1C4300667538 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		6A95E37F2A51734D00558558 /* RecommendationFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationFilterView.swift; sourceTree = "<group>"; };
 		C07679EF2A4ABB5300CEE111 /* snap-style.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "snap-style.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C07679F22A4ABB5300CEE111 /* SnapStyleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapStyleApp.swift; sourceTree = "<group>"; };
 		C07679F42A4ABB5300CEE111 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		C0767A0B2A4AC2A300CEE111 /* ScanResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultView.swift; sourceTree = "<group>"; };
 		C0835D712A4ACA4400D0DA96 /* DummyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyComponent.swift; sourceTree = "<group>"; };
 		C0835D742A4ACD9700D0DA96 /* RecommendationBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationBottomSheetView.swift; sourceTree = "<group>"; };
+		C0C5981C2A5BF1E400D4C022 /* clothes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clothes.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		C034744E2A5690F00027CEDC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C0C5981C2A5BF1E400D4C022 /* clothes.json */,
 				C034744F2A5691000027CEDC /* bodyshape.json */,
 				C03474552A56A58B0027CEDC /* clothesstyle.json */,
 			);
@@ -239,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0C5981D2A5BF1E400D4C022 /* clothes.json in Resources */,
 				C03474562A56A58B0027CEDC /* clothesstyle.json in Resources */,
 				C03474502A5691000027CEDC /* bodyshape.json in Resources */,
 				C07679FA2A4ABB5400CEE111 /* Preview Assets.xcassets in Resources */,

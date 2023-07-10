@@ -208,6 +208,9 @@ struct RecommendationView: View {
                                         RoundedRectangle(cornerRadius: 16).foregroundColor(.gray).opacity(0.1)
                                             .frame(width: 169)
                                         Image(leftItem.image)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(maxWidth: 110)
                                             .padding(.vertical, 10)
                                     }.onTapGesture {
                                         isClothClicked = true
@@ -221,6 +224,9 @@ struct RecommendationView: View {
                                         RoundedRectangle(cornerRadius: 16).foregroundColor(.gray).opacity(0.1)
                                             .frame(width: 169)
                                         Image(rightItem.image)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(maxWidth: 110)
                                             .padding(.vertical, 10)
                                     }.onTapGesture {
                                         isClothClicked = true

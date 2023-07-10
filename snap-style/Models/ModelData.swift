@@ -8,7 +8,7 @@
 import Foundation
 
 var bodyShapes: [BodyShape]? = load("bodyshape.json")
-var clothesStyle: [ClothesStyle]? = load("clothesstyle.json")
+var clothesStyle: [ClothesStyle]? = load("clothes.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     
