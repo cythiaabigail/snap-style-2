@@ -21,6 +21,7 @@ struct RecommendationView: View {
     @State var isClothClicked : Bool = false
     @State var selectedStyle : ClothesStyle?
     @State var isFilterClicked : Bool = false
+    @State var isFavoriteOnly : Bool = false
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: Color("secondary")]
@@ -32,7 +33,16 @@ struct RecommendationView: View {
         var leftImages: [ClothesStyle]? = []
         var rightImages: [ClothesStyle]? = []
         
-        for cs in (clothesStyle ?? []) {
+        var shuffledClothes: [ClothesStyle]? = clothesStyle
+        
+        if (isFavoriteOnly) {
+            idx = 0
+            shuffledClothes = shuffledClothes?.filter({ $0.isFavorite })
+        } else {
+            shuffledClothes = shuffledClothes?.shuffled() 
+        }
+        
+        for cs in (shuffledClothes ?? []) {
             if (idx % 2 == 0) {
                 leftImages?.append(cs)
             } else {
@@ -53,7 +63,10 @@ struct RecommendationView: View {
                     HStack {
                         Text("Styles For You").font(.system(.largeTitle, weight: .bold)).foregroundColor(Color("secondary"))
                         Spacer()
-                        Image(systemName: "heart").resizable().frame(width: 24.44, height: 22.41).foregroundColor(Color("secondary"))
+                        Image(systemName: (isFavoriteOnly ? "heart.fill" : "heart")).resizable().frame(width: 24.44, height: 22.41).foregroundColor(Color("secondary"))
+                            .onTapGesture {
+                                isFavoriteOnly.toggle()
+                            }
                     }.padding(.bottom, 40)
                     
                     ZStack {
@@ -132,7 +145,6 @@ struct RecommendationView: View {
                                         .background(occationPicks.contains("Formal") ? .gray : .black)
                                         .cornerRadius(4)
                                 }
-                                
                                 Button {
                                     if occationPicks.contains("Formal") {
                                         occationPicks

@@ -8,7 +8,7 @@
         "occasion": ["Casual", "Semi-Formal"],
         "type": "outer",
         "image": "winterjacket_outer3",
-        "isFavorite": false
+        "isFavorite": true
     },
     {
         "bodyShape": [],
@@ -79,7 +79,7 @@
         "occasion": ["Casual", "Semi-Formal"],
         "type": "outer",
         "image": "denimjacket_outer9",
-        "isFavorite": false
+        "isFavorite": true
     },
     {
         "bodyShape": [],
@@ -90,7 +90,7 @@
         "occasion": ["Casual", "Semi-Formal"],
         "type": "outer",
         "image": "leatherjacket_outer10",
-        "isFavorite": false
+        "isFavorite": true
     },
     {
         "bodyShape": [],

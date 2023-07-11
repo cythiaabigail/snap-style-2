@@ -26,8 +26,12 @@ struct RecommendationBottomSheetView: View {
                     }
                     .foregroundColor(Color("primary"))
                     Spacer()
-                    Image(systemName: "heart")
+                    Image(systemName: (selectedItem?.isFavorite ?? false) ? "heart.fill" : "heart")
                         .font(.system(size: 25))
+                        .foregroundColor((selectedItem?.isFavorite ?? false) ? .red : Color("primary"))
+                        .onTapGesture {
+                            selectedItem?.isFavorite
+                        }
                 }
                 .padding(.top, 20)
                 .padding(.horizontal, 30)
