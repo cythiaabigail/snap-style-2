@@ -10,6 +10,7 @@ import SwiftUI
 struct Testing: View {
     
     var imageView : UIImage = UIImage(named: "Unknown")!
+    var imageSecond : UIImage = UIImage(named: "Unknown")!
     @State var realPoint : CGPoint = .zero
     
     var humanJoints : [String: CGPoint] = [:]
@@ -25,13 +26,15 @@ struct Testing: View {
         let leftJoint = humanJoints["left_shoulder_1_joint"]
         let valuePerPixel = BodyCalculation(image: imageView, fixedTall: 165.0).imagePixelPersize(humanJoints: self.humanJoints)
         let range = BodyJoint().jointRange(firstJoint: firstJoint ?? CGPoint(x: 0.0, y: 0.0), secondJoint: leftJoint ?? CGPoint(x: 0.0, y: 0.0), sizePerPixel: valuePerPixel, image: imageView)
-        
+        humanJoints = BodyJoint().bodyJointFromPercentage(jointName: "waist", jointPercentage: 0.5, humanJoints: humanJoints, image: imageView)
+        humanJoints = BodyJoint().bodyJointFromPercentage(jointName: "hip", jointPercentage: 1.0, humanJoints: humanJoints, image: imageView)
+//        humanJoints = BodyJoint().bodyJointFromPercentage(jointName: "test", jointPercentage: 0.74, humanJoints: humanJoints, image: imageView)
         print(range)
     }
     
     var body: some View {
         GeometryReader { viewSize in
-            Image(uiImage: imageView)
+            Image(uiImage: imageSecond)
                 .resizable()
                 .overlay {
                     PointOverlay(imageWidth: viewSize.size.width, imageHeight: viewSize.size.height, coordinates: self.humanJoints)
