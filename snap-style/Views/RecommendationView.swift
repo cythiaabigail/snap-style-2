@@ -13,6 +13,8 @@ struct RecommendationView: View {
     let piecePickers : [String] = ["Outter", "Pants", "Full"]
     let colorPickers : [String] = ["Red", "Green", "Blue"]
     let pinterestColumn = [GridItem(.flexible())]
+    
+    @AppStorage("favorites") var favorites: String = ""
 
     @State var scrollPosition : CGPoint = CGPoint(x: 0.0, y: 0.0)
     @State var occationPicks : [String] = []
@@ -32,12 +34,12 @@ struct RecommendationView: View {
         var idx = 0
         var leftImages: [ClothesStyle]? = []
         var rightImages: [ClothesStyle]? = []
-        
+        let favoritesArr: [String]? = favorites.components(separatedBy: "|")
         var shuffledClothes: [ClothesStyle]? = clothesStyle
         
         if (isFavoriteOnly) {
             idx = 0
-            shuffledClothes = shuffledClothes?.filter({ $0.isFavorite })
+            shuffledClothes = shuffledClothes?.filter({ (favoritesArr ?? []).contains($0.id.uuidString) })
         } else {
             shuffledClothes = shuffledClothes?.shuffled() 
         }

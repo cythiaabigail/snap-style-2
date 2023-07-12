@@ -8,6 +8,7 @@
 import Foundation
 
 struct ClothesStyle: Identifiable, Codable, Hashable {
+    
     var id: UUID
     var bodyShape: [BodyShape]?
     var name: String
@@ -25,7 +26,7 @@ struct ClothesStyle: Identifiable, Codable, Hashable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = UUID()
+        id = try container.decode(UUID.self, forKey: .id)
         bodyShape = try container.decode([BodyShape].self, forKey: .bodyShape)
         name = try container.decode(String.self, forKey: .name)
         description = try container.decodeIfPresent(String.self, forKey: .description)

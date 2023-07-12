@@ -15,6 +15,7 @@ struct ContentView: View {
     @AppStorage("name") var name: String = ""
     @AppStorage("age") var age: String = ""
     @AppStorage("gender") var gender: String = ""
+    @AppStorage("favorites") var favorites: String = ""
     
     var body: some View {
 //        NavigationStack {

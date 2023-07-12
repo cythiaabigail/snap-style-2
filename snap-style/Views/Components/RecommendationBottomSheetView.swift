@@ -11,6 +11,9 @@ struct RecommendationBottomSheetView: View {
     
     @Binding var isPreviewShowed: Bool
     @Binding var selectedItem: ClothesStyle?
+    @State var isFavoriteToggled: Bool = false
+    
+    @AppStorage("favorites") var favorites: String = ""
     
     var body: some View {
         ZStack {
@@ -26,11 +29,24 @@ struct RecommendationBottomSheetView: View {
                     }
                     .foregroundColor(Color("primary"))
                     Spacer()
-                    Image(systemName: (selectedItem?.isFavorite ?? false) ? "heart.fill" : "heart")
+                    Image(systemName: isFavoriteToggled ? "heart.fill" : "heart")
                         .font(.system(size: 25))
-                        .foregroundColor((selectedItem?.isFavorite ?? false) ? .red : Color("primary"))
+                        .foregroundColor(isFavoriteToggled ? .red : Color("primary"))
                         .onTapGesture {
-                            selectedItem?.isFavorite
+                            // decode
+                            var currentFavorites: [String] = favorites.components(separatedBy: "|")
+                            if (isFavoriteToggled) {
+                                currentFavorites = currentFavorites.filter({ cf in
+                                    return cf != selectedItem!.id.uuidString
+                                })
+                            } else {
+                                currentFavorites.append(selectedItem?.id.uuidString ?? "")
+                                if currentFavorites[0] == "" {
+                                    currentFavorites.removeFirst()
+                                }
+                            }
+                            favorites = currentFavorites.joined(separator: "|")
+                            isFavoriteToggled.toggle()
                         }
                 }
                 .padding(.top, 20)
@@ -72,6 +88,10 @@ struct RecommendationBottomSheetView: View {
                     .padding(.top, 40)
                 }
             }
+        }
+        .onAppear {
+            let favoritesArr: [String] = favorites.components(separatedBy: "|")
+            isFavoriteToggled = favoritesArr.contains((selectedItem?.id.uuidString)!)
         }
     }
 }
