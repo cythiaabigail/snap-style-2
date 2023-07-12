@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct RecommendationFilterView: View {
+    
     @Binding var chooseOccations : [String]
     @Binding var choosePieces : [String]
     @Binding var chooseColors : [String]
     @Binding var isFilterAppear : Bool
+    
     @State var isFilterReseted : Bool = false
     @State var onFilterValueChanged: Bool = false
+    @State var isFilterButtonShowed: Bool = false
+    
+    
     let occationPickers : [String] = ["Formal", "Semi Formal", "Casual"]
     let piecePickers : [String] = ["Outter", "Pants", "Full"]
     let colorPickers : [String] = ["Red", "Green", "Blue"]
@@ -129,7 +134,7 @@ struct RecommendationFilterView: View {
                     }.frame(maxWidth: .infinity, alignment: .leading)
                 }.scrollIndicators(.hidden)
                 
-                if onFilterValueChanged {
+                if isFilterButtonShowed {
                     Button {
                         isFilterAppear.toggle()
                     } label: {
@@ -147,7 +152,7 @@ struct RecommendationFilterView: View {
             }.padding(.horizontal, 24)
                 .padding(.top, 42)
                 .onChange(of: chooseOccations) { _ in
-                    onFilterValueChanged.toggle()
+                    checkForFilteredButton()
                     if chooseOccations.count != 0 {
                         isFilterReseted = true
                     } else {
@@ -155,7 +160,7 @@ struct RecommendationFilterView: View {
                     }
                 }
                 .onChange(of: choosePieces) { _ in
-                    onFilterValueChanged.toggle()
+                    checkForFilteredButton()
                     if choosePieces.count != 0 {
                         isFilterReseted = true
                     } else {
@@ -163,7 +168,7 @@ struct RecommendationFilterView: View {
                     }
                 }
                 .onChange(of: chooseColors) { _ in
-                    onFilterValueChanged.toggle()
+                    checkForFilteredButton()
                     if chooseColors.count != 0 {
                         isFilterReseted = true
                     } else {
@@ -171,6 +176,10 @@ struct RecommendationFilterView: View {
                     }
                 }
         }.padding(.bottom, 24)
+    }
+    
+    func checkForFilteredButton() {
+        isFilterButtonShowed = !(chooseOccations.isEmpty && choosePieces.isEmpty && chooseColors.isEmpty)
     }
 }
 

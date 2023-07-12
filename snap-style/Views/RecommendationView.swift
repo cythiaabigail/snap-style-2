@@ -84,7 +84,6 @@ struct RecommendationView: View {
                                     }
                                     Spacer()
                                 }.hidden()
-                                
                                 Button {
                                     if occationPicks.contains("Formal") {
                                         occationPicks
@@ -105,7 +104,6 @@ struct RecommendationView: View {
                                         .background(occationPicks.contains("Formal") ? .gray : .black)
                                         .cornerRadius(4)
                                 }
-                                
                                 Button {
                                     if occationPicks.contains("Formal") {
                                         occationPicks
@@ -126,7 +124,6 @@ struct RecommendationView: View {
                                         .background(occationPicks.contains("Formal") ? .gray : .black)
                                         .cornerRadius(4)
                                 }
-                                
                                 Button {
                                     if occationPicks.contains("Formal") {
                                         occationPicks

@@ -6,8 +6,9 @@
 //
 
 import Foundation
+//import SwiftUI
 
-//class ClothesStyleViewModel {
+class ClothesStyleViewModel {    
 //    func saveFavorite(clothesStyle: ClothesStyle) throws {
 //        do {
 //            let jsonData: Data? = encode(model: clothesStyle)
@@ -32,4 +33,4 @@ import Foundation
 //            return nil
 //        }
 //    }
-//}
+}
