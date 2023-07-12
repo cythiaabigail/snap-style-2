@@ -18,13 +18,13 @@ struct ContentView: View {
     @AppStorage("favorites") var favorites: String = ""
     
     var body: some View {
-//        NavigationStack {
+        NavigationStack {
             if (isNotOnboarding == false) {
                 OnBoardingView()
             } else {
                 TabViewComponents()
             }
-//        }
+        }
     }
 }
 

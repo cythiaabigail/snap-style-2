@@ -145,13 +145,10 @@ struct ProfileView: View {
                             .padding(.top)
                             .padding()
                             VStack (alignment: .leading){
-                                
-                                
                                 Text("The waist is the narrowest point on an average man’s torso. The rib cage widens steadily up to the collarbone and shoulders, which are the broadest parts of the torso. This gives the body an overall trapezoidal shape with the shorter side at the bottom.")
                                     .font(.caption)
                                 
-                                Button(action: {
-                                }){
+                                NavigationLink(destination: CameraView()) {
                                     Text("Rescan Body Shape")
                                         .font(.caption)
                                         .padding(.horizontal)
@@ -160,6 +157,9 @@ struct ProfileView: View {
                                         .background(Color("primary"))
                                         .foregroundColor(Color("secondary"))
                                         .cornerRadius(4.0)
+                                }
+                                .onTapGesture {
+                                    print("Testing")
                                 }
                                 .padding(.top)
                             }

@@ -10,15 +10,13 @@ import SwiftUI
 struct OnBoardingView: View {
     @State  var increment: Int = 0
     var body: some View {
-        NavigationStack{
-            VStack {
-                if(increment == 0){
-                    OnBoardingGetStarted(increment:$increment)
-                }else if(increment == 1){
-                    OnBoardingGenderPicker(increment:$increment)
-                }else{
-                    OnBoardingPersonalData(increment:$increment)
-                }
+        VStack {
+            if(increment == 0){
+                OnBoardingGetStarted(increment:$increment)
+            }else if(increment == 1){
+                OnBoardingGenderPicker(increment:$increment)
+            }else{
+                OnBoardingPersonalData(increment:$increment)
             }
         }
     }

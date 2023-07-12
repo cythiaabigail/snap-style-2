@@ -11,7 +11,8 @@ import SwiftUI
 struct TabViewComponents: View {
     var body: some View {
         TabView {
-            RecommendationView().tabItem {
+            RecommendationView()
+                .tabItem {
                 Label("Your Styles", systemImage: "tshirt")
             }
             .toolbar(.visible, for: .tabBar)

@@ -50,6 +50,17 @@ class CameraController : UIViewController{
         }
     }
     
+    func sapimanPermission(){
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            isCamPermissionGranted = true
+        case .notDetermined:
+            requestCamPermission()
+        default:
+            isCamPermissionGranted = false
+        }
+    }
+    
     private func requestCamPermission() {
         sessionQueue.suspend()
         AVCaptureDevice.requestAccess(for: .video) { [unowned self] granted in
@@ -130,6 +141,8 @@ class CameraController : UIViewController{
 
 struct HostedViewController : UIViewControllerRepresentable {
     
+    @AppStorage("isNotOnboarding") var isNotOnboarding : Bool = false
+    
     @Binding var countingTimer : Int
     @Binding var isPhotoTaken : Bool
     
@@ -149,8 +162,9 @@ struct HostedViewController : UIViewControllerRepresentable {
             }
             
             if(countingTimer == 0) {
-                isPhotoTaken = true
                 timer.invalidate()
+                isNotOnboarding = true
+                isPhotoTaken = true
             }
             
             countingTimer = countingTimer - 1

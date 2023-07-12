@@ -13,6 +13,8 @@ struct OnBoardingPersonalData: View {
     @AppStorage("weight") var weight: String = ""
     @AppStorage("height") var height: String = ""
     
+    @FocusState var isInputActive: Bool
+    
     @Binding var increment: Int
     
     var body: some View {
@@ -44,7 +46,15 @@ struct OnBoardingPersonalData: View {
                             .font(.title3)
                         HStack {
                             TextField("", text: $height)
+                                .focused($isInputActive)
                                 .keyboardType(.numberPad)
+                                .toolbar(content: {
+                                    ToolbarItemGroup(placement: .keyboard) {
+                                        Button("Done") {
+                                            isInputActive = false
+                                        }
+                                    }
+                                })
                                 .placeholder(when: height.isEmpty) {
                                     Text("Input your height").foregroundColor(.gray)}
                             
@@ -63,7 +73,15 @@ struct OnBoardingPersonalData: View {
                             .font(.title3)
                         HStack {
                             TextField("", text: $weight)
+                                .focused($isInputActive)
                                 .keyboardType(.numberPad)
+                                .toolbar(content: {
+                                    ToolbarItemGroup(placement: .keyboard) {
+                                        Button("Done") {
+                                            isInputActive = false
+                                        }
+                                    }
+                                })
                                 .placeholder(when: weight.isEmpty) {
                                     Text("Input your weight").foregroundColor(.gray)}
                                 .padding()
@@ -96,9 +114,8 @@ struct OnBoardingPersonalData: View {
                                     .stroke(Color("secondary"), lineWidth: 2)
                             )
                     }.padding()
-                    
-                    NavigationLink (destination: TabViewComponents(), isActive: $isNotOnboarding) {
-                        Text("Finish")
+                    NavigationLink (destination: CameraView()) {
+                        Text("Scan Your Body")
                             .padding()
                             .frame(maxWidth: .infinity, alignment:.center)
                             .background(height == "" || weight == "" ? Color("grey") : Color("secondary"))
@@ -107,7 +124,6 @@ struct OnBoardingPersonalData: View {
                     }
                     .disabled(height == "" || weight == "")
                 }
-                
             }
             .padding(.top)
             .padding(.leading)

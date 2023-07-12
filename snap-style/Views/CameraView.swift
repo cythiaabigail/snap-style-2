@@ -58,8 +58,9 @@ struct CameraView: View {
                             }
                         }
                     }
-                }.onAppear {
+                }.task {
                     hostedViewController = HostedViewController(countingTimer: $countingCameraTime, isPhotoTaken: $isPhotoAlreadyTaken)
+                    hostedViewController?.cameraViewController.sapimanPermission()
                 }.onChange(of: countingCameraTime) { _ in
                     if countingCameraTime < 11 && countingCameraTime > 5 {
                         isAlertPopup = true
