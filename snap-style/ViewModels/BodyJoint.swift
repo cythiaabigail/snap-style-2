@@ -34,8 +34,7 @@ class BodyJoint {
                     
                     for (jointName, point) in recognizedPoints {
                         var coordinate = point.location
-                        print(jointName.rawValue)
-                        if (jointName.rawValue == "left_upLeg_joint" || jointName.rawValue == "right_upLeg_joint" || jointName.rawValue == "left_foot_joint" || jointName.rawValue == "neck_1_joint") {
+                        if (jointName.rawValue == "left_shoulder_1_joint" || jointName.rawValue == "right_shoulder_1_joint" || jointName.rawValue == "left_upLeg_joint" || jointName.rawValue == "right_upLeg_joint" || jointName.rawValue == "left_foot_joint" || jointName.rawValue == "neck_1_joint") {
                             coordinate.x = coordinate.x * image.size.width
                             coordinate.y = (1-coordinate.y) * image.size.height
                             jointCoordinates[jointName.rawValue] = coordinate
@@ -75,6 +74,20 @@ class BodyJoint {
                 humanJointsConfigured[humanJoint.key] = testJoint
 //                humanJointsConfigured[humanJoint.key] = jointToLeft(humanJoint: humanJoint.value, image: image)
             } else if humanJoint.key == "right_upLeg_joint" {
+                //testing purpose
+                var testJoint = jointToVerticalConfiguration(humanJoint: humanJoint.value, image: image, isLeft: false)
+                testJoint.x = testJoint.x/image.size.width
+                testJoint.y = testJoint.y/image.size.height
+                humanJointsConfigured[humanJoint.key] = testJoint
+//                humanJointsConfigured[humanJoint.key] = jointToLeft(humanJoint: humanJoint.value, image: image)
+            } else if humanJoint.key == "left_shoulder_1_joint" {
+                //testing purpose
+                var testJoint = jointToVerticalConfiguration(humanJoint: humanJoint.value, image: image, isLeft: true)
+                testJoint.x = testJoint.x/image.size.width
+                testJoint.y = testJoint.y/image.size.height
+                humanJointsConfigured[humanJoint.key] = testJoint
+//                humanJointsConfigured[humanJoint.key] = jointToLeft(humanJoint: humanJoint.value, image: image)
+            } else if humanJoint.key == "right_shoulder_1_joint" {
                 //testing purpose
                 var testJoint = jointToVerticalConfiguration(humanJoint: humanJoint.value, image: image, isLeft: false)
                 testJoint.x = testJoint.x/image.size.width
@@ -128,11 +141,13 @@ class BodyJoint {
         secondPoint.x = secondPoint.x * image.size.width
         secondPoint.y = secondPoint.y * image.size.height
         
+        let rangeX = abs(firstPoint.x-secondPoint.x)
         if firstJoint.y != secondJoint.y {
-            let rangeX = abs(firstPoint.x-secondPoint.x)
             let rangeY = abs(firstPoint.y-secondPoint.y)
             let jarak = (pow(rangeX, 2)) + (pow(rangeY, 2))
             jaraks = sqrt(jarak)
+        } else {
+            jaraks = rangeX
         }
         return jaraks * sizePerPixel
     }
@@ -144,7 +159,7 @@ class BodyJoint {
         let footY = (joints["left_foot_joint"]?.y ?? 0.0)
         var joint = joints["neck_1_joint"] ?? CGPoint(x: 0.0, y: 0.0)
         
-        let valueY = abs((footY - headY)) * jointPercentage
+        let valueY = abs((footY - headY)) * (1-jointPercentage)
         joint.y = headY + valueY
         joint.y = joint.y * image.size.height
         joint.x = joint.x * image.size.width
