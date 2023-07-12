@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct CameraView: View {
+    
+    var humanJoints: [String: CGPoint] = [:]
+    
+    var imageView: UIImage = UIImage(named: "Front")!
+    var imageSecond: UIImage = UIImage(named: "Side")!
+    var humanJoinstSide : [String: CGPoint] = [:]
+    let scanningBody : ScanningBody = ScanningBody()
+    
     @State var isPhotoAlreadyTaken : Bool = false
     @State var countingCameraTime : Int = 15
     @State var hostedViewController : HostedViewController?
@@ -17,7 +25,7 @@ struct CameraView: View {
     var body: some View {
         GeometryReader { screenSize in
             if(isPhotoAlreadyTaken) {
-                ContentView()
+                BodyRecognitionView()
             } else {
                 GeometryReader { screenSize in
                     ZStack {
