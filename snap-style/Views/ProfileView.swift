@@ -156,7 +156,7 @@ struct ProfileView: View {
 //                                    .font(.caption)
                                 
                                 NavigationLink(destination: CameraView()) {
-                                    Text("Rescan Body Shape")
+                                    Text("Rescan Body Shapex")
                                         .font(.caption)
                                         .padding(.horizontal)
                                         .padding(.vertical, 8)
