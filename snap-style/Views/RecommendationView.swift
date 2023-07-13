@@ -15,6 +15,7 @@ struct RecommendationView: View {
     let pinterestColumn = [GridItem(.flexible())]
     
     @AppStorage("favorites") var favorites: String = ""
+    @AppStorage("gender") var gender: String = ""
 
     @State var scrollPosition : CGPoint = CGPoint(x: 0.0, y: 0.0)
     @State var occationPicks : [String] = []
@@ -42,6 +43,8 @@ struct RecommendationView: View {
             shuffledClothes = shuffledClothes?.filter({ (favoritesArr ?? []).contains($0.id.uuidString) })
         }
         
+        shuffledClothes = shuffledClothes?.filter({ $0.gender.rawValue == gender })
+        
         for cs in (shuffledClothes ?? []) {
             if (idx % 2 == 0) {
                 leftImages?.append(cs)
@@ -68,7 +71,6 @@ struct RecommendationView: View {
                                 isFavoriteOnly.toggle()
                             }
                     }.padding(.bottom, 40)
-                    
                     ZStack {
                         ScrollView(.horizontal) {
                             HStack {
@@ -211,39 +213,53 @@ struct RecommendationView: View {
                     
                     ScrollView {
                         HStack {
-                            LazyVGrid (columns: pinterestColumn) {
-                                ForEach((mappedImages["left"] ?? [])!, id: \.self) { leftItem in
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 16).foregroundColor(.gray).opacity(0.1)
-                                            .frame(width: 169)
-                                        Image(leftItem.image)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(maxWidth: 110)
-                                            .padding(.vertical, 10)
-                                    }.onTapGesture {
-                                        isClothClicked = true
-                                        selectedStyle = leftItem
+                            if (isFavoriteOnly && ((mappedImages["left"] ?? [])?.count ?? 0) <= 0 && ((mappedImages["right"] ?? [])?.count ?? 0) <= 0) {
+                                VStack {
+                                    Image("blank_state")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(maxWidth: 250)
+                                        .padding(.vertical, 20)
+                                    Text("No Favorites")
+                                        .font(.headline)
+                                    Spacer().frame(height: 5)
+                                    Text("Tap \(Image(systemName: "heart.fill")) to add your first favorite style !")
+                                }
+                            } else {
+                                LazyVGrid (columns: pinterestColumn) {
+                                    ForEach((mappedImages["left"] ?? [])!, id: \.self) { leftItem in
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 16).foregroundColor(.gray).opacity(0.1)
+                                                .frame(width: 169)
+                                            Image(leftItem.image)
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(maxWidth: 110)
+                                                .padding(.vertical, 10)
+                                        }.onTapGesture {
+                                            isClothClicked = true
+                                            selectedStyle = leftItem
+                                        }
+                                    }
+                                }.frame(maxHeight: .infinity, alignment: .top)
+                                LazyVGrid (columns: pinterestColumn) {
+                                    ForEach((mappedImages["right"] ?? [])!, id: \.self) { rightItem in
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 16).foregroundColor(.gray).opacity(0.1)
+                                                .frame(width: 169)
+                                            Image(rightItem.image)
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(maxWidth: 110)
+                                                .padding(.vertical, 10)
+                                        }.onTapGesture {
+                                            isClothClicked = true
+                                            selectedStyle = rightItem
+                                        }
                                     }
                                 }
-                            }.frame(maxHeight: .infinity, alignment: .top)
-                            LazyVGrid (columns: pinterestColumn) {
-                                ForEach((mappedImages["right"] ?? [])!, id: \.self) { rightItem in
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 16).foregroundColor(.gray).opacity(0.1)
-                                            .frame(width: 169)
-                                        Image(rightItem.image)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(maxWidth: 110)
-                                            .padding(.vertical, 10)
-                                    }.onTapGesture {
-                                        isClothClicked = true
-                                        selectedStyle = rightItem
-                                    }
-                                }
+                                .frame(maxHeight: .infinity, alignment: .top)
                             }
-                            .frame(maxHeight: .infinity, alignment: .top)
                         }.padding(.top, 5)
                     }.frame(maxWidth: .infinity)
                         .background(Color("secondary"))
