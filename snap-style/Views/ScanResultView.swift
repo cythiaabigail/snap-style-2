@@ -33,35 +33,48 @@ struct ScanResultView: View {
                         .padding(.top, 30)
                     Spacer()
                         .frame(height: 20)
-                    Text(bodyShapeDescription)
-                    Spacer()
-                        .frame(height: 20)
-                    Text("Pro Tips :")
-                        .fontWeight(.bold)
-                        .padding(.bottom, 10)
-                    HStack {
-                        Image(systemName: "checkmark.circle.fill")
-                        Text("Slim-fit clothes to flatter your physique")
+                    ScrollView {
+                        Text(bodyShapeDescription)
+                        Spacer()
+                            .frame(height: 20)
+                        VStack(alignment: .leading) {
+                            Text("Pro Tips :")
+                                .fontWeight(.bold)
+                                .padding(.bottom, 10)
+                            HStack {
+                                Image(systemName: "checkmark.circle.fill")
+                                Text("Slim-fit clothes to flatter your physique")
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 0.1)
+                            HStack {
+                                Image(systemName: "checkmark.circle.fill")
+                                Text("Slim-fit clothes to flatter your physique")
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 0.1)
+                            HStack {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(Color("yellow"))
+                                Text("Slim-fit clothes to flatter your physique")
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 0.1)
+                            HStack {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(Color("yellow"))
+                                Text("Slim-fit clothes to flatter your physique")
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom, 0.1)
+                            Spacer()
+                        }
+                            .frame(maxWidth: .infinity)
                     }
-                    .padding(.bottom, 0.1)
-                    HStack {
-                        Image(systemName: "checkmark.circle.fill")
-                        Text("Slim-fit clothes to flatter your physique")
-                    }
-                    .padding(.bottom, 0.1)
-                    HStack {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(Color("yellow"))
-                        Text("Slim-fit clothes to flatter your physique")
-                    }
-                    .padding(.bottom, 0.1)
-                    HStack {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(Color("yellow"))
-                        Text("Slim-fit clothes to flatter your physique")
-                    }
-                    .padding(.bottom, 0.1)
-                    Spacer()
                 }
                 NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
                     Text("See Your Personalized Style")

@@ -40,8 +40,6 @@ struct RecommendationView: View {
         if (isFavoriteOnly) {
             idx = 0
             shuffledClothes = shuffledClothes?.filter({ (favoritesArr ?? []).contains($0.id.uuidString) })
-        } else {
-//            shuffledClothes
         }
         
         for cs in (shuffledClothes ?? []) {
