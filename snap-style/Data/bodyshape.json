@@ -1,62 +1,236 @@
-[
-{
-	"name": "Rectangle",
-	"description": "A rectangular body shape is characterized by a relatively balanced proportion between the bust, waist, and hips. The waist is not significantly defined, and there is minimal curve between the waist and hips, resulting in a more straight-up-and-down figure.",
-	"image": "link1",
-	"gender": "female"
-},
-{
-	"name": "Inverted Triangle",
-	"description": "An inverted triangle body shape is characterized by broader shoulders, a wider bust, and a narrower waist and hips. The upper body, especially the shoulders and bust, is more prominent compared to the lower body, creating a triangle-like shape with the base at the shoulders and the point at the hips.",
-	"image": "link1",
-	"gender": "female"
-},
-{
-	"name": "Hourglass",
-	"description": "An hourglass body shape is characterized by a well-defined waistline and balanced proportions between the bust and hips. The bust and hips are similar in width, with a narrower waist creating an hourglass silhouette.",
-	"image": "link1",
-	"gender": "female"
-},
-{
-	"name": "Pear",
-	"description": "A pear body shape is characterized by wider hips, fuller thighs, and a narrower bust and shoulders. The lower body is more prominent compared to the upper body, creating a triangular silhouette.",
-	"image": "link1",
-	"gender": "female"
-},
-{
-	"name": "Apple",
-	"description": "An apple body shape is characterized by a larger bust, rounded shoulders, a fuller midsection, and slimmer arms, legs, and hips. The weight tends to be concentrated in the abdominal area, giving the body a rounder or oval appearance.",
-	"image": "link1",
-	"gender": "female"
-},
-{
-	"name": "Rectangle",
-	"description": "The rectangle body shape for men is characterized by a relatively balanced proportion between the chest, waist, and hips, resulting in a straight-up-and-down figure. This body shape is often associated with an athletic or slim build.",
-	"image": "link1",
-	"gender": "female"
-},
-{
-	"name": "Inverted Triangle",
-	"description": "The inverted triangle body shape for men is characterized by broad shoulders and chest in proportion to a narrower waist and hips, creating a V-shaped silhouette. This body shape is often associated with a naturally athletic or muscular build.",
-	"image": "link1",
-	"gender": "female"
-},
-{
-	"name": "Trapezoid",
-	"description": "The trapezoid body shape for men is characterized by broad shoulders and chest that taper down to a narrower waist, creating a V-shaped silhouette similar to an inverted trapezoid.",
-	"image": "link1",
-	"gender": "female"
-},
-{
-	"name": "Triangle",
-	"description": "The triangle body shape for men is characterized by broader hips and thighs in relation to the shoulders and chest, creating a shape that resembles an inverted triangle.",
-	"image": "link1",
-	"gender": "female"
-},
-{
-	"name": "Oval",
-	"description": "The oval body shape for men is characterized by a rounder or fuller midsection, often with less prominent shoulders and narrower hips. The weight tends to be concentrated in the abdominal area, creating a more rounded appearance.",
-	"image": "link1",
-	"gender": "female"
-}
+[{
+    "name": "Rectangle",
+    "description": "A rectangular body shape is characterized by a relatively balanced proportion between the bust, waist, and hips. The waist is not significantly defined, and there is minimal curve between the waist and hips, resulting in a more straight-up-and-down figure.",
+    "image": "female_rectangle",
+    "gender": "female",
+    "tips": {
+      "pro": [
+        "Round necklines like scoop or jewel necklines can help create some curves to your body",
+        "Rolled-up or cuffed sleeves will draw attention and create more volume",
+        "Shirts with nipped or belted waists help create a waist",
+        "Darker colors to add slimming effect",
+        "Longer coats that are worn opened elongate and add a slimming effect to the body"
+      ],
+      "cons": [
+        "Square and straight necklines can add additional squareness to your frame",
+        "Tight-fitting or boxy jumpers would add more squareness to the body",
+        "Jackets that end above the waist will make you look squarer",
+        "Straight-fitted trousers emphasize the straight silhouette of your body",
+        "Jeans that flare too wide can create an unbalanced body proportion"
+      ]
+    }
+  },
+  {
+    "name": "Inverted Triangle",
+    "description": "An inverted triangle body shape is characterized by broader shoulders, a wider bust, and a narrower waist and hips. The upper body, especially the shoulders and bust, is more prominent compared to the lower body, creating a triangle-like shape with the base at the shoulders and the point at the hips.",
+    "image": "female_inv_triangle",
+    "gender": "female",
+    "tips": {
+      "pro": [
+        "Tops with soft sleeves that flare can add volume around hips",
+        "Asymmetric styles help elongate your silhouette",
+        "Slim and long necklines to reduce the width of the upper body",
+        "Tops that extend pas the hip line to draw attention away from the shoulders",
+        "Darker colored tops to avert attention to the lower body instead"
+      ],
+      "cons": [
+
+        "Off-the-shoulder tops can further broaden your shoulders",
+        "Tops with shoulder pads emphasize the width around the shoulders",
+        "Heavy wardrobe detailings around the shoulders can draw the eye to the wide shoulders",
+        "Cropped shirts create unbalanced and top-heavy proportion",
+        "Horizontal stripes on tops add bulk to the shoulders"
+      ]
+    }
+  },
+  {
+    "name": "Hourglass",
+    "description": "An hourglass body shape is characterized by a well-defined waistline and balanced proportions between the bust and hips. The bust and hips are similar in width, with a narrower waist creating an hourglass silhouette.",
+    "image": "female_hourglass",
+    "gender": "female",
+    "tips": {
+      "pro": [
+        "Belts and nipped garments can accentuate the waist",
+        "Fitted sleeve to follow the body’s natural curve",
+        "Lightweight fabrics complement the body’s shape by highlighting your silhouette",
+        "Single-breasted and fitted jackets will not add extra bulk and can follow the natural body line",
+        "Trousers that are slimmer can give a balanced look and help accentuates waist"
+      ],
+      "cons": [
+        "Straight cuts and boxy styles hide the waist",
+        "Wide necklines can add volume to the bust area, go for v-lines instead",
+        "Big ruffles or other embellishments add a lot of volume to the upper body",
+        "Extra bulk on waist can hide the waist’s slimness",
+        "Chunky and heavy knits hide the natural hourglass body shape"
+      ]
+    }
+  },
+  {
+    "name": "Pear",
+    "description": "A pear body shape is characterized by wider hips, fuller thighs, and a narrower bust and shoulders. The lower body is more prominent compared to the upper body, creating a triangular silhouette.",
+    "image": "female_pear",
+    "gender": "female",
+    "tips": {
+      "pro": [
+
+        "Structured shoulders to visually widen the shoulder line",
+        "Bright color tops",
+        "Fitted clothes to accentuate the waist area",
+        "Short sleeves with wide and embellished styles can add volume to the upper body",
+        "Fitted and nipped tops can accentuate the waist"
+      ],
+      "cons": [
+
+        "Skinny and tight bottoms can emphasize the wide hips",
+        "Details, patterns, and pockets on thigh and hip area",
+        "Belts on hips can avert all attention to that area",
+        "Narrow and long necklines can make the shoulder and bust area narrow",
+        "Tops that go beyond hips would make the hips appear even more wide"
+      ]
+    }
+  },
+  {
+    "name": "Apple",
+    "description": "An apple body shape is characterized by a larger bust, rounded shoulders, a fuller midsection, and slimmer arms, legs, and hips. The weight tends to be concentrated in the abdominal area, giving the body a rounder or oval appearance.",
+    "image": "female_apple",
+    "gender": "female",
+    "tips": {
+      "pro": [
+
+        "Wide and low necklines can help elongate the body",
+        "Details on and around the neckline can draw the attention away from your torso",
+        "Loose and flared sleeves to create more volume to the upper body",
+        "Tops with diagonal lines, big prints and textures to hide extra weight around the midsection",
+        "Wide-leg and flowing trousers with slimmer legs balanced out the wider midsection"
+      ],
+      "cons": [
+
+        "Fitted sleeves can make the upper body’s proportion heavier",
+        "Crop tops and tight fitted shirts highlight the wider stomach area",
+        "Belted and double-breasted jackets create a boxy and heavy-looking upper body",
+        "Very tapered trousers accentuate your slim legs and the upper body will appear bigger",
+        "Avoid high-rise skinny trousers that can highlight your wide torso"
+      ]
+    }
+  },
+  {
+    "name": "Rectangle",
+    "description": "The rectangle body shape for men is characterized by a relatively balanced proportion between the chest, waist, and hips, resulting in a straight-up-and-down figure. This body shape is often associated with an athletic or slim build.",
+    "image": "male_rectangle",
+    "gender": "male",
+    "tips": {
+      "pro": [
+
+        "Layered clothing can add a little bulk to your shoulders and upper body",
+        "Add accessories to help add texture to upper body",
+        "Detailings on shirts draw attentions towards the shoulder and chest, making the upper body broader",
+        "Horizontal stripes across upper body to make waist narrower",
+        "Tapered clothes make your shoulders seem broader"
+      ],
+      "cons": [
+
+        "Vertical stripes make your body lines stand out too much",
+        "Double-breasted jackets accentuates the lines of the body shape",
+        "Shapeless clothes won’t allow your body frame to stand out",
+        "Flared jeans make hips broader",
+        "Oversized shirts make your body shapeless"
+      ]
+    }
+  },
+  {
+    "name": "Inverted Triangle",
+    "description": "The inverted triangle body shape for men is characterized by broad shoulders and chest in proportion to a narrower waist and hips, creating a V-shaped silhouette. This body shape is often associated with a naturally athletic or muscular build.",
+    "image": "male_inv_triangle",
+    "gender": "male",
+    "tips": {
+      "pro": [
+        "V-necks to show off your chest",
+        "Slim fit shirts to flatter your shape and show your muscular build",
+        "Horizontal stripes make waist and hips appear wider",
+        "Footwear that stands out, such as suede/leather shoes, to draw the eyes away from the upper body.",
+        "Large belts and buckles to draw the eyes to your hips"
+      ],
+      "cons": [
+
+        "Super skinny jeans or trousers makes your whole body out of proportion",
+        "Plunging v-neck shirts will overly accentuate your body shape",
+        "Jackets with padding adds excess bulk to your upper body",
+        "Tops with large or bold patterns draw attention to the upper body",
+        "Overly bright or bold colors make the lower body appear smaller"
+
+      ]
+    }
+  },
+  {
+    "name": "Trapezoid",
+    "description": "The trapezoid body shape for men is characterized by broad shoulders and chest that taper down to a narrower waist, creating a V-shaped silhouette similar to an inverted trapezoid.",
+    "image": "male_trapezoid",
+    "gender": "male",
+    "tips": {
+
+      "pro": [
+        "Slim-fit clothes",
+        "Outer that tapers at waist to appear slimmer and broader shoulders",
+        "Vertical stripes on shirt to appear taller",
+        "Normal length neckties (3 - 3 1/2 inches)",
+        "Straight-cut jeans"
+      ],
+      "cons": [
+        "Baggy clothes, especially for trousers",
+        "Ill-fitting clothes (too big or too small)",
+        "Generic colors or styles",
+        "Excessive shoulder padding on suit jackets",
+        "Unstructured clothing that hides your body frame"
+
+      ]
+    }
+  },
+  {
+    "name": "Triangle",
+    "description": "The triangle body shape for men is characterized by broader hips and thighs in relation to the shoulders and chest, creating a shape that resembles an inverted triangle.",
+    "image": "male_triangle",
+    "gender": "male",
+    "tips": {
+      "pro": [
+
+        "Darker colors to appear slimmer",
+        "Slim belts to not draw attention to the waist or hips",
+        "Tailored blazers to avoid looking excessively narrow along the upper body",
+        "Single-breasted suits to avoid additional bulk to the midsection",
+        "Padded shoulders square up the upper half of the body"
+      ],
+      "cons": [
+
+        "Horizontal stripes have enlarging effect",
+        "Fitted shirts not suitable for wider midsection",
+        "Slim-fitting pants accentuate the midsection",
+        "Polo shirts with narrow crew necks make shoulder appear narrow",
+        "Loosely fitted tops"
+      ]
+    }
+  },
+  {
+    "name": "Oval",
+    "description": "The oval body shape for men is characterized by a rounder or fuller midsection, often with less prominent shoulders and narrower hips. The weight tends to be concentrated in the abdominal area, creating a more rounded appearance.",
+    "image": "male_oval",
+    "gender": "male",
+    "tips": {
+      "pro": [
+
+        "Dark colors create a slimming effect",
+        "Long jackets give an illusion of height",
+        "V-necks show more of your neck and make you appear slimmer",
+        "Vertical stripes and wearing suspenders/ties elongates your torso",
+        "Long sleeves elongates limbs"
+      ],
+      "cons": [
+
+        "Tight tops that can accentuate the midsection",
+        "Loose pants make your lower body wider",
+        "Double-breasted jackets add excessive bulk to your frame",
+        "Horizontal stripes will focus the width of your midsection",
+        "Large belts draw attention to the midsection"
+      ]
+    }
+  }
 ]

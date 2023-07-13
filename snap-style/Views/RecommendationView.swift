@@ -16,6 +16,7 @@ struct RecommendationView: View {
     
     @AppStorage("favorites") var favorites: String = ""
     @AppStorage("gender") var gender: String = ""
+    @AppStorage("appBodyShape") var appBodyShape: String = ""
 
     @State var scrollPosition : CGPoint = CGPoint(x: 0.0, y: 0.0)
     @State var occationPicks : [String] = []
@@ -65,6 +66,7 @@ struct RecommendationView: View {
                 VStack {
                     HStack {
                         Text("Styles For You").font(.system(.largeTitle, weight: .bold)).foregroundColor(Color("secondary"))
+                        Text(appBodyShape)
                         Spacer()
                         Image(systemName: (isFavoriteOnly ? "heart.fill" : "heart")).resizable().frame(width: 24.44, height: 22.41).foregroundColor(Color("secondary"))
                             .onTapGesture {
