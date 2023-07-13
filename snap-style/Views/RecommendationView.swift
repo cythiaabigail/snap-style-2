@@ -44,7 +44,22 @@ struct RecommendationView: View {
             shuffledClothes = shuffledClothes?.filter({ (favoritesArr ?? []).contains($0.id.uuidString) })
         }
         
-        shuffledClothes = shuffledClothes?.filter({ $0.gender.rawValue == gender })
+        shuffledClothes = shuffledClothes?.filter({ sfClothes in
+            
+            let isGenderValid: Bool = sfClothes.gender.rawValue == gender
+            var isBodyShapeValid: Bool {
+                for bs in sfClothes.bodyShape! {
+                    if bs.name == appBodyShape {
+                        return true
+                    }
+                }
+                return false
+            }
+            
+            
+            return isGenderValid && isBodyShapeValid
+            
+        })
         
         for cs in (shuffledClothes ?? []) {
             if (idx % 2 == 0) {
