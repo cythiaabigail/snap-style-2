@@ -10,23 +10,31 @@ import SwiftUI
 struct ScanResultView: View {
     @State private var isSheetPresented = false
     
-    var bodyShapeTitle: String = "Trapezoid"
-    var bodyShapeDescription: String = "The waist is the narrowest point on an average man’s torso. The rib cage widens steadily up to the. collarbone and shoulders, which are the broadest parts of the torso. This gives the body an overall trapezoidal shape with the shorter side at the bottom collarbone and shoulders, which are the broadest parts of the torso. This gives the body an overall trapezoidal shape with the shorter side at the bottom"
+    @AppStorage("appBodyShape") var appBodyShape: String = ""
+    @AppStorage("gender") var gender: String = ""
+    
+    var dataBodyShape: [BodyShape]? = bodyShapes
+    var filteredData: [BodyShape] {
+        dataBodyShape?.filter { $0.name == appBodyShape && $0.gender.rawValue == gender} ?? []
+        }
+    
+//    var bodyShapeTitle: String = "Trapezoid"
+//    var bodyShapeDescription: String = "The waist is the narrowest point on an average man’s torso. The rib cage widens steadily up to the. collarbone and shoulders, which are the broadest parts of the torso. This gives the body an overall trapezoidal shape with the shorter side at the bottom collarbone and shoulders, which are the broadest parts of the torso. This gives the body an overall trapezoidal shape with the shorter side at the bottom"
     
     var body: some View {
         VStack(alignment: .center) {
-            Image("body_shape_trapezoid")
+            Image(filteredData[0].image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200)
                 .padding(.bottom, 30)
-            Text("Your Body Shape is \(bodyShapeTitle)")
+            Text("Your Body Shape is \(appBodyShape)")
                 .fontWeight(.bold)
                 .font(.system(size: 20))
                 .padding(.bottom, 30)
             VStack {
                 VStack(alignment: .leading) {
-                    Text("\(bodyShapeTitle) Body Shape")
+                    Text("\(appBodyShape) Body Shape")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.title)
                         .fontWeight(.bold)
@@ -34,43 +42,61 @@ struct ScanResultView: View {
                     Spacer()
                         .frame(height: 20)
                     ScrollView {
-                        Text(bodyShapeDescription)
+                        Text(filteredData[0].description)
                         Spacer()
                             .frame(height: 20)
                         VStack(alignment: .leading) {
                             Text("Pro Tips :")
                                 .fontWeight(.bold)
                                 .padding(.bottom, 10)
-                            HStack {
-                                Image(systemName: "checkmark.circle.fill")
-                                Text("Slim-fit clothes to flatter your physique")
-                                    .multilineTextAlignment(.leading)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.bottom, 0.1)
-                            HStack {
-                                Image(systemName: "checkmark.circle.fill")
-                                Text("Slim-fit clothes to flatter your physique")
-                                    .multilineTextAlignment(.leading)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.bottom, 0.1)
-                            HStack {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(Color("yellow"))
-                                Text("Slim-fit clothes to flatter your physique")
-                                    .multilineTextAlignment(.leading)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.bottom, 0.1)
-                            HStack {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(Color("yellow"))
-                                Text("Slim-fit clothes to flatter your physique")
-                                    .multilineTextAlignment(.leading)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.bottom, 0.1)
+                            
+                            ForEach(filteredData[0].tips?["pro"] as? [String] ?? [], id: \.self) { tip in
+                                HStack {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .foregroundColor(Color("yellow"))
+                                    Text(tip)
+                                }
+                                .padding(.bottom, 0.1)
+                                       }
+                            
+                            ForEach(filteredData[0].tips?["cons"] as? [String] ?? [], id: \.self) { tip in
+                                HStack {
+                                    Image(systemName: "x.circle.fill")
+                                        .foregroundColor(Color("red"))
+                                    Text(tip)
+                                }
+                                .padding(.bottom, 0.1)
+                                       }
+//                            HStack {
+//                                Image(systemName: "checkmark.circle.fill")
+//                                Text("Slim-fit clothes to flatter your physique")
+//                                    .multilineTextAlignment(.leading)
+//                            }
+//                            .frame(maxWidth: .infinity, alignment: .leading)
+//                            .padding(.bottom, 0.1)
+//                            HStack {
+//                                Image(systemName: "checkmark.circle.fill")
+//                                Text("Slim-fit clothes to flatter your physique")
+//                                    .multilineTextAlignment(.leading)
+//                            }
+//                            .frame(maxWidth: .infinity, alignment: .leading)
+//                            .padding(.bottom, 0.1)
+//                            HStack {
+//                                Image(systemName: "checkmark.circle.fill")
+//                                    .foregroundColor(Color("yellow"))
+//                                Text("Slim-fit clothes to flatter your physique")
+//                                    .multilineTextAlignment(.leading)
+//                            }
+//                            .frame(maxWidth: .infinity, alignment: .leading)
+//                            .padding(.bottom, 0.1)
+//                            HStack {
+//                                Image(systemName: "checkmark.circle.fill")
+//                                    .foregroundColor(Color("yellow"))
+//                                Text("Slim-fit clothes to flatter your physique")
+//                                    .multilineTextAlignment(.leading)
+//                            }
+//                            .frame(maxWidth: .infinity, alignment: .leading)
+//                            .padding(.bottom, 0.1)
                             Spacer()
                         }
                             .frame(maxWidth: .infinity)
