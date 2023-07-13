@@ -58,6 +58,8 @@ class Camera : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
     
     func takePhoto() {
         DispatchQueue.global(qos: .background).async {
+            var photoSettings = AVCapturePhotoSettings()
+            
             self.outputCamera.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
         }
     }
@@ -67,14 +69,24 @@ class Camera : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
             return
         }
         
-        guard let imageData = photo.fileDataRepresentation() else {return}
+        guard let image = photo.cgImageRepresentation() else {return}
         
-        self.cameraOutput1 = imageData
+//        guard let imageData = photo.fileDataRepresentation() else {return}
+        
+        let temp = CIImage(cgImage: image)
+        var ciImage = temp
+        ciImage = temp.oriented(forExifOrientation: 6)
+        
+//        self.cameraOutput1 = imageData
+        guard let cgImage = CIContext(options: nil).createCGImage(ciImage, from: ciImage.extent) else {return}
+        
+        
         print("photo taken")
-        images.append(UIImage(data: imageData)!)
+        images.append(UIImage(cgImage: cgImage))
     }
     
     func photoReturn() -> [UIImage] {
+        captureSession.stopRunning()
         return images
     }
     

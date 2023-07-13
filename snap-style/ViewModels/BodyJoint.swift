@@ -115,7 +115,7 @@ class BodyJoint {
         var cgPointWhite : CGPoint = humanJoint
 
         while image.isColorWhite(at: cgPointWhite) {
-            cgPointWhite.x = cgPointWhite.x + (isLeft ? -50 : 50)
+            cgPointWhite.x = cgPointWhite.x + (isLeft ? -10 : 10)
         }
 
         return cgPointWhite
@@ -126,7 +126,7 @@ class BodyJoint {
         var cgPointWhite : CGPoint = humanJoint
 
         while image.isColorWhite(at: cgPointWhite) {
-            cgPointWhite.y = cgPointWhite.y + (isUp ? -50 : 50)
+            cgPointWhite.y = cgPointWhite.y + (isUp ? -10 : 10)
         }
 
         return cgPointWhite

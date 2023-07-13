@@ -94,10 +94,10 @@ class BodyCalculation {
 //                let bust = 90.0
         
         //data apple
-                let shoulder = 89.5
-                let hip = 90.0
-                let waist = 79.0
-                let bust = 100.0
+                let shoulder = fourData["shoulder"]!
+                let hip = fourData["hip"]!
+                let waist = fourData["up_hip"]!
+                let bust = fourData["bust"]!
         
         //data pear
 //        let shoulder = 89.5

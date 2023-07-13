@@ -11,6 +11,10 @@ struct BodyRecognitionView: View {
     
     var imageView : UIImage = UIImage(named: "Front")!
     var imageSecond : UIImage = UIImage(named: "Side")!
+    
+    @AppStorage("height") var height: String = ""
+    @AppStorage("isNotOnboarding") var isNotOnboarding: Bool = false
+    
     @State var realPoint : CGPoint = .zero
     
     var humanJoints : [String: CGPoint] = [:]
@@ -19,7 +23,9 @@ struct BodyRecognitionView: View {
     
     let scanningBody : ScanningBody = ScanningBody()
     
-    init() {
+    init(images : [UIImage]) {
+        imageView = images[0]
+        imageSecond = images[1]
         humanJoints = BodyJoint().detectJoin(image: imageView)
         imageView = scanningBody.PersonSegmentation(imageView: imageView)
         humanJoints = BodyJoint().configJoint(humanJoints: humanJoints, image: imageView)
@@ -32,28 +38,33 @@ struct BodyRecognitionView: View {
         humanJoinstSide = BodyJoint().bodyJointFromPercentage(jointName: "up_hip", jointPercentage: 0.59, humanJoints: humanJoinstSide, image: imageSecond)
         humanJoinstSide = BodyJoint().bodyJointFromPercentage(jointName: "bust", jointPercentage: 0.7, humanJoints: humanJoinstSide, image: imageSecond)
         
-        let bodyCalculation = BodyCalculation.init(image: imageView, fixedTall: 165, secondImage: imageSecond)
-        bodyCalculation.bodyAroundCalculation(humanJoinstFront: humanJoints, humanJoinstSide: humanJoinstSide)
+        if let n = NumberFormatter().number(from: height) {
+            let f = CGFloat(truncating: n)
+            let bodyCalculation = BodyCalculation.init(image: imageView, fixedTall: f, secondImage: imageSecond)
+            bodyCalculation.bodyAroundCalculation(humanJoinstFront: humanJoints, humanJoinstSide: humanJoinstSide)
+            isNotOnboarding = true
+        }
     }
     
     var body: some View {
+
         ScanResultView()
             .navigationBarBackButtonHidden(true)
 //        GeometryReader { viewSize in
-//            Image(uiImage: imageView)
+//            Image(uiImage: imageSecond)
 //                .resizable()
 //                .overlay {
-//                    PointOverlay(imageWidth: viewSize.size.width, imageHeight: viewSize.size.height, coordinates: self.humanJoints)
+//                    PointOverlay(imageWidth: viewSize.size.width, imageHeight: viewSize.size.height, coordinates: self.humanJoinstSide)
 //                }
 //        }
     }
     
-    struct BodyRecognition_Previews: PreviewProvider {
-        static var previews: some View {
-            BodyRecognitionView()
-        }
-    }
-    
+//    struct BodyRecognition_Previews: PreviewProvider {
+//        static var previews: some View {
+//            BodyRecognitionView()
+//        }
+//    }
+//    
     struct PointOverlay: View {
         
         var imageWidth: Double

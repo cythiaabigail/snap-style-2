@@ -114,7 +114,7 @@ struct OnBoardingPersonalData: View {
                                     .stroke(Color("secondary"), lineWidth: 2)
                             )
                     }.padding()
-                    NavigationLink (destination: CameraView()) {
+                    NavigationLink (destination: CameraViewTesting()) {
                         Text("Scan Your Body")
                             .padding()
                             .frame(maxWidth: .infinity, alignment:.center)

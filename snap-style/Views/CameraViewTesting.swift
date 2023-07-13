@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct CameraViewTesting: View {
+    
     @StateObject var camera = Camera()
+    
     @State var isClicked = false
     @State var imageFirst : UIImage = UIImage()
     @State var imageSecond : UIImage = UIImage()
@@ -18,7 +20,7 @@ struct CameraViewTesting: View {
     
     var body: some View {
         if isClicked {
-            TestingView(imageFirst: camera.photoReturn())
+            BodyRecognitionView(images: camera.photoReturn())
         } else {
             GeometryReader { screenSize in
                 ZStack {
@@ -60,7 +62,7 @@ struct CameraViewTesting: View {
                             }
                         }
                     }
-                }.onAppear {
+                }.task {
                     camera.checkPermission()
                 }.onChange(of: camera.images) { _ in
                     if camera.images.count == 2 {

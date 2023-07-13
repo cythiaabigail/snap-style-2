@@ -155,7 +155,7 @@ struct ProfileView: View {
 //                                Text("The waist is the narrowest point on an average man’s torso. The rib cage widens steadily up to the collarbone and shoulders, which are the broadest parts of the torso. This gives the body an overall trapezoidal shape with the shorter side at the bottom.")
 //                                    .font(.caption)
                                 
-                                NavigationLink(destination: CameraView()) {
+                                NavigationLink(destination: CameraViewTesting()) {
                                     Text("Rescan Body Shape")
                                         .font(.caption)
                                         .padding(.horizontal)
@@ -282,11 +282,10 @@ struct ProfileView: View {
                     Image(filteredData[0].image)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: geo.size.width * 1.1 / 3.0,height: geo.size.height / 1.8)
+                        .frame(width: geo.size.width * 1.1 / 3.0,height: geo.size.height / 2.0)
                         .clipped()
                         .frame(maxWidth: .infinity,alignment:.trailing)
-                        .padding(.top,90)
-                        .padding(.trailing,20)
+                        .offset(x: 30, y: 90)
                     Spacer()
                 }
             }
