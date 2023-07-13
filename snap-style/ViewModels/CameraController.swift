@@ -11,24 +11,26 @@ import UIKit
 import SwiftUI
 import os.log
 
-class CameraController : UIViewController{
+class CameraController : UIViewController {
     private var isCamPermissionGranted = false
     private let captureSession = AVCaptureSession()
     private let sessionQueue = DispatchQueue(label: "sessionQueue")
-    private var addToPhotoStream: ((AVCapturePhoto) -> Void)?
+    var outputPhoto: [UIImage] = []
     private var previewLayer = AVCaptureVideoPreviewLayer()
     var screenRect : CGRect! = nil
     private var photoOutput : AVCapturePhotoOutput!
     private var deviceInput : AVCaptureDeviceInput?
+
     
-    lazy var photoStream: AsyncStream<AVCapturePhoto> = {
-        AsyncStream { continuation in
-            addToPhotoStream = { photo in
-                continuation.yield(photo)
-            }
-        }
-    }()
     
+//    lazy var photoStream: AsyncStream<AVCapturePhoto> = {
+//        AsyncStream { continuation in
+//            addToPhotoStream = { photo in
+//                continuation.yield(photo)
+//            }
+//        }
+//    }()
+//
     override func viewDidLoad() {
         checkCamPermission()
         
@@ -95,33 +97,35 @@ class CameraController : UIViewController{
         }
     }
     
+    
+    
     func takePhoto() {
         guard let photoOutput = self.photoOutput else { return }
-        
         sessionQueue.async {
-            
+
             var photoSettings = AVCapturePhotoSettings()
-            
-            
-            if photoOutput.availablePhotoCodecTypes.contains(.hevc) {
-                photoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.hevc])
+
+
+            if photoOutput.availablePhotoCodecTypes.contains(.jpeg) {
+                photoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
             }
-            
-            let isFlashAvailable = self.deviceInput?.device.isFlashAvailable ?? false
+
+//            let isFlashAvailable = self.deviceInput?.device.isFlashAvailable ?? false
             photoSettings.flashMode = .off
             //            photoSettings.isHighResolutionPhotoEnabled = true
             if let previewPhotoPixelFormatType = photoSettings.availablePreviewPhotoPixelFormatTypes.first {
                 photoSettings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String: previewPhotoPixelFormatType]
             }
             photoSettings.photoQualityPrioritization = .balanced
-            
+
             if let photoOutputVideoConnection = photoOutput.connection(with: .video) {
                 photoOutputVideoConnection.videoOrientation = AVCaptureVideoOrientation.portrait
             }
-            
+
             photoOutput.capturePhoto(with: photoSettings, delegate: self)
         }
     }
+    
     
     //    func handleCamera() async {
     //        let imageStream = previewStream
@@ -170,16 +174,12 @@ struct HostedViewController : UIViewControllerRepresentable {
             countingTimer = countingTimer - 1
         }
     }
-//
-//    @objc func timerTask(timer: Timer) {
-//        if(countingTimer % 5 == 0) {
-//            takePhoto()
-//        }
-//
-//        if(countingTimer == 10) {
-//            timer.invalidate()
-//        }
-//    }
+    
+    func takePhoto() async -> [UIImage] {
+        await cameraViewController.takePhoto()
+        
+        return await cameraViewController.outputPhoto
+    }
 }
 
 extension CameraController: AVCapturePhotoCaptureDelegate  {
@@ -192,6 +192,9 @@ extension CameraController: AVCapturePhotoCaptureDelegate  {
         }
         
         /*#-code-walkthrough(photoflow.addToPhotoStream)*/
-        addToPhotoStream?(photo)
+        guard let image = photo.fileDataRepresentation() else {return}
+        let uimage = UIImage(data: image)
+        
+        outputPhoto.append(uimage ?? UIImage())
     }
 }
