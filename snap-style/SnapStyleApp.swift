@@ -13,7 +13,7 @@ struct SnapStyleApp: App {
 
     var body: some Scene {
         WindowGroup {
-            CameraView()
+            CameraViewTesting()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
