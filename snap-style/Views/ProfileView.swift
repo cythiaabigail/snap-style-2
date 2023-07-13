@@ -14,11 +14,17 @@ struct ProfileView: View {
     @AppStorage("height") var height: String = ""
     @AppStorage("weight") var weight: String = ""
     @AppStorage("age") var age: String = ""
+    @AppStorage("appBodyShape") var appBodyShape: String = ""
     
     @State var isWeightToogle: Bool = true
     @State var isHeightToggle: Bool = true
     @State var isAgeToggle: Bool = true
     @State var isNameToggle: Bool = true
+    
+    var dataBodyShape: [BodyShape]? = bodyShapes
+    var filteredData: [BodyShape] {
+        dataBodyShape?.filter { $0.name == appBodyShape} ?? []
+        }
     
     var body: some View {
         GeometryReader { geo in
@@ -136,7 +142,7 @@ struct ProfileView: View {
                         
                         VStack (alignment: .leading) {
                             VStack (alignment: .leading){
-                                Text("Triangle Body Shape")
+                                Text(appBodyShape)
                                     .font(.title2)
                                     .fontWeight(.bold)
                                     .foregroundColor(Color("primary"))
@@ -145,8 +151,9 @@ struct ProfileView: View {
                             .padding(.top)
                             .padding()
                             VStack (alignment: .leading){
-                                Text("The waist is the narrowest point on an average man’s torso. The rib cage widens steadily up to the collarbone and shoulders, which are the broadest parts of the torso. This gives the body an overall trapezoidal shape with the shorter side at the bottom.")
-                                    .font(.caption)
+                                Text(filteredData[0].description).font(.caption)
+//                                Text("The waist is the narrowest point on an average man’s torso. The rib cage widens steadily up to the collarbone and shoulders, which are the broadest parts of the torso. This gives the body an overall trapezoidal shape with the shorter side at the bottom.")
+//                                    .font(.caption)
                                 
                                 NavigationLink(destination: CameraView()) {
                                     Text("Rescan Body Shape")
@@ -173,70 +180,84 @@ struct ProfileView: View {
                                     
                                     VStack (alignment: .leading){
                                         
-                                        HStack {
-                                            Image(systemName: "checkmark.circle.fill")
-                                                .foregroundColor(Color("yellow"))
-                                            Text("Slim-fit clothes to flatter your physiqueadgnflajfas")
-                                        }
-                                        .padding(.bottom, 0.1)
-                                        HStack {
-                                            Image(systemName: "checkmark.circle.fill")
-                                                .foregroundColor(Color("yellow"))
-                                            Text("Slim-fit clothes to flatter your physique")
-                                        }
-                                        .padding(.bottom, 0.1)
-                                        HStack {
-                                            Image(systemName: "checkmark.circle.fill")
-                                                .foregroundColor(Color("yellow"))
-                                            Text("Slim-fit clothes to flatter your physique")
-                                        }
-                                        .padding(.bottom, 0.1)
-                                        HStack {
-                                            Image(systemName: "checkmark.circle.fill")
-                                                .foregroundColor(Color("yellow"))
-                                            Text("Slim-fit clothes to flatter your physique")
-                                        }
-                                        .padding(.bottom, 0.1)
-                                        HStack {
-                                            Image(systemName: "checkmark.circle.fill")
-                                                .foregroundColor(Color("yellow"))
-                                            Text("Slim-fit clothes to flatter your physique")
-                                        }
-                                        .padding(.bottom, 0.1)
+                                        ForEach(filteredData[0].tips?["pro"] as? [String] ?? [], id: \.self) { tip in
+                                            HStack {
+                                                Image(systemName: "checkmark.circle.fill")
+                                                    .foregroundColor(Color("yellow"))
+                                                Text(tip)
+                                            }
+                                            .padding(.bottom, 0.1)
+                                                   }
+                                        
+                                            
+//                                        HStack {
+//                                            Image(systemName: "checkmark.circle.fill")
+//                                                .foregroundColor(Color("yellow"))
+//                                            Text("Slim-fit clothes to flatter your physique")
+//                                        }
+//                                        .padding(.bottom, 0.1)
+//                                        HStack {
+//                                            Image(systemName: "checkmark.circle.fill")
+//                                                .foregroundColor(Color("yellow"))
+//                                            Text("Slim-fit clothes to flatter your physique")
+//                                        }
+//                                        .padding(.bottom, 0.1)
+//                                        HStack {
+//                                            Image(systemName: "checkmark.circle.fill")
+//                                                .foregroundColor(Color("yellow"))
+//                                            Text("Slim-fit clothes to flatter your physique")
+//                                        }
+//                                        .padding(.bottom, 0.1)
+//                                        HStack {
+//                                            Image(systemName: "checkmark.circle.fill")
+//                                                .foregroundColor(Color("yellow"))
+//                                            Text("Slim-fit clothes to flatter your physique")
+//                                        }
+//                                        .padding(.bottom, 0.1)
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     VStack (alignment: .leading){
                                         
-                                        HStack {
-                                            Image(systemName: "x.circle.fill")
-                                                .foregroundColor(Color("red"))
-                                            Text("Slim-fit clothes to flatter your physiqueadgnflajfas physique physique physique physique physique physique physique physique physique ")
-                                        }
-                                        .padding(.bottom, 0.1)
-                                        HStack {
-                                            Image(systemName: "x.circle.fill")
-                                                .foregroundColor(Color("red"))
-                                            Text("Slim-fit clothes to flatter your physique physique physique physique physique")
-                                        }
-                                        .padding(.bottom, 0.1)
-                                        HStack {
-                                            Image(systemName: "x.circle.fill")
-                                                .foregroundColor(Color("red"))
-                                            Text("Slim-fit clothes to flatter your physique")
-                                        }
-                                        .padding(.bottom, 0.1)
-                                        HStack {
-                                            Image(systemName: "x.circle.fill")
-                                                .foregroundColor(Color("red"))
-                                            Text("Slim-fit clothes to flatter your physique")
-                                        }
-                                        .padding(.bottom, 0.1)
-                                        HStack {
-                                            Image(systemName: "x.circle.fill")
-                                                .foregroundColor(Color("red"))
-                                            Text("Slim-fit clothes to flatter your physique")
-                                        }
-                                        .padding(.bottom, 0.1)
+                                        
+                                        ForEach(filteredData[0].tips?["cons"] as? [String] ?? [], id: \.self) { tip in
+                                            HStack {
+                                                Image(systemName: "x.circle.fill")
+                                                    .foregroundColor(Color("red"))
+                                                Text(tip)
+                                            }
+                                            .padding(.bottom, 0.1)
+                                                   }
+                                        
+//                                        HStack {
+//                                            Image(systemName: "x.circle.fill")
+//                                                .foregroundColor(Color("red"))
+//                                            Text("Slim-fit clothes to flatter your physiqueadgnflajfas physique physique physique physique physique physique physique physique physique ")
+//                                        }
+//                                        .padding(.bottom, 0.1)
+//                                        HStack {
+//                                            Image(systemName: "x.circle.fill")
+//                                                .foregroundColor(Color("red"))
+//                                            Text("Slim-fit clothes to flatter your physique physique physique physique physique")
+//                                        }
+//                                        .padding(.bottom, 0.1)
+//                                        HStack {
+//                                            Image(systemName: "x.circle.fill")
+//                                                .foregroundColor(Color("red"))
+//                                            Text("Slim-fit clothes to flatter your physique")
+//                                        }
+//                                        .padding(.bottom, 0.1)
+//                                        HStack {
+//                                            Image(systemName: "x.circle.fill")
+//                                                .foregroundColor(Color("red"))
+//                                            Text("Slim-fit clothes to flatter your physique")
+//                                        }
+//                                        .padding(.bottom, 0.1)
+//                                        HStack {
+//                                            Image(systemName: "x.circle.fill")
+//                                                .foregroundColor(Color("red"))
+//                                            Text("Slim-fit clothes to flatter your physique")
+//                                        }
+//                                        .padding(.bottom, 0.1)
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 }
@@ -258,10 +279,10 @@ struct ProfileView: View {
                 
                 
                 VStack (alignment:.trailing){
-                    Image("profile")
+                    Image(filteredData[0].image)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: geo.size.width * 0.9 / 3.0,height: geo.size.height / 1.8)
+                        .frame(width: geo.size.width * 1.1 / 3.0,height: geo.size.height / 1.8)
                         .clipped()
                         .frame(maxWidth: .infinity,alignment:.trailing)
                         .padding(.top,90)

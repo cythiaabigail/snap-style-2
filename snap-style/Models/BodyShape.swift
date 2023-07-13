@@ -13,9 +13,10 @@ struct BodyShape: Codable {
     var description: String
     var image: String
     var gender: Gender
+    var tips: Dictionary<String, [String]>?
     
     enum CodingKeys: String, CodingKey {
-        case id, name, description, image, gender
+        case id, name, description, image, gender, tips
     }
     
     init(from decoder: Decoder) throws {
@@ -25,6 +26,7 @@ struct BodyShape: Codable {
         description = try container.decode(String.self, forKey: .description)
         image = try container.decode(String.self, forKey: .image)
         gender = try container.decode(Gender.self, forKey: .gender)
+        tips = try container.decode(Dictionary<String, [String]>.self, forKey: .tips)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -34,5 +36,6 @@ struct BodyShape: Codable {
         try container.encode(description, forKey: .description)
         try container.encode(image, forKey: .image)
         try container.encode(gender, forKey: .gender)
+        try container.encode(tips, forKey: .tips)
     }
 }

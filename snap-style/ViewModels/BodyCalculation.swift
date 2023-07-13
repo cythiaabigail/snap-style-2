@@ -9,7 +9,8 @@ import SwiftUI
 
 
 class BodyCalculation {
-    @AppStorage("favorites") var favorites: String = "World"
+    @AppStorage("gender") var appGender: String = ""
+    @AppStorage("appBodyShape") var appBodyShape: String = ""
     
     let image : UIImage
     let fixedTall : CGFloat
@@ -51,8 +52,11 @@ class BodyCalculation {
         
         bodyShape = bodyShapeResult(fourData: bodyAround, marginError: 0.05)
         
+        appBodyShape = bodyShapeResult(fourData: bodyAround, marginError: 0.05)
+        
         print(bodyAround)
         print(bodyShape)
+        print(appBodyShape)
         
         
         return bodyAround
@@ -72,28 +76,28 @@ class BodyCalculation {
     func bodyShapeResult(fourData : [String: CGFloat], marginError : CGFloat) -> String{
         
         //data chytia || rectangle
-        let shoulder = 103.0
-                        let hip = 92.0
-        let waist = 107.0
-                        let bust = 83.0
+//        let shoulder = 103.0
+//                        let hip = 92.0
+//        let waist = 107.0
+//                        let bust = 83.0
         
         // data hourglass
-        //                let shoulder = 89.5
-        //                let hip = 90.0
-        //                let waist = 79.0
-        //                let bust = 90.0
+//                        let shoulder = 89.5
+//                        let hip = 90.0
+//                        let waist = 79.0
+//                        let bust = 90.0
         
         //data inv triangle
-        //        let shoulder = 100.0
-        //        let hip = 80.0
-        //        let waist = 69.0
-        //        let bust = 90.0
+//                let shoulder = 100.0
+//                let hip = 80.0
+//                let waist = 69.0
+//                let bust = 90.0
         
         //data apple
-        //        let shoulder = 89.5
-        //        let hip = 90.0
-        //        let waist = 79.0
-        //        let bust = 100.0
+                let shoulder = 89.5
+                let hip = 90.0
+                let waist = 79.0
+                let bust = 100.0
         
         //data pear
 //        let shoulder = 89.5
@@ -118,9 +122,9 @@ class BodyCalculation {
         let rangeBustDown = bust - (marginError * bust)
         let rangeBustUp = bust + (marginError * bust)
         
-        let gender = "Male"
+        let gender =  appGender
         
-        var hasil = "Unidentified"
+        var hasil = "Rectangle"
         //        print(rangeShoulderDown)
         //        print(rangeShoulderUp)
         //        print(rangeHipDown)
@@ -131,7 +135,7 @@ class BodyCalculation {
 //        print(rangeBustUp)
         
         //FEMALE
-        if(gender == "Female"){
+        if(gender == "female"){
             //Rectangle,
             //Shoulder dan Hips memiliki ukuran yang hampir sama
             //Bust lebih kecil dari shoulder/hips
@@ -153,7 +157,7 @@ class BodyCalculation {
             if(hip >= rangeBustDown && hip <= rangeBustUp)
             {
                 if(waist < hip && hip - waist >= 10.0){
-                    hasil = "HourGlass"
+                    hasil = "Hourglass"
                 }
             }
             
@@ -181,7 +185,7 @@ class BodyCalculation {
                 hasil = "Pear"
             }
         }
-        else if(gender == "Male"){
+        else if(gender == "male"){
             //Rectangle
             //shoulder, waist, hips mirip2
             if(hip >= rangeShoulderDown && hip <= rangeShoulderUp)
