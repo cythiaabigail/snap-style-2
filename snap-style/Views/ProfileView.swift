@@ -23,7 +23,7 @@ struct ProfileView: View {
     
     var dataBodyShape: [BodyShape]? = bodyShapes
     var filteredData: [BodyShape] {
-        dataBodyShape?.filter { $0.name == appBodyShape} ?? []
+        dataBodyShape?.filter { $0.name == appBodyShape && $0.gender.rawValue == gender} ?? []
         }
     
     var body: some View {
@@ -156,7 +156,7 @@ struct ProfileView: View {
 //                                    .font(.caption)
                                 
                                 NavigationLink(destination: CameraView()) {
-                                    Text("Rescan Body Shapex")
+                                    Text("Rescan Body Shape")
                                         .font(.caption)
                                         .padding(.horizontal)
                                         .padding(.vertical, 8)
