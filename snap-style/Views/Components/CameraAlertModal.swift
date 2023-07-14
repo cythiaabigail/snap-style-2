@@ -10,15 +10,15 @@ import SwiftUI
 struct CameraAlertModal: View {
     @State var imageSequenceTimer : Timer?
     @State var indexImage : Int = 0
-    let images : [String] = ["front_animate", "halfside_animate", "side_animate"]
+    let images : [String] = ["front_animate", "halfside_animate", "side_animate", "last_animate"]
     
     var body: some View {
         VStack {
             Image(images[indexImage]).resizable().scaledToFit()
         }.padding(.vertical, 10).onAppear {
-            imageSequenceTimer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: true, block: { _ in               indexImage = indexImage + 1
+            imageSequenceTimer = Timer.scheduledTimer(withTimeInterval: 0.65, repeats: true, block: { _ in               indexImage = indexImage + 1
 
-                if indexImage == 3 {
+                if indexImage == 4 {
                     indexImage = 0
                 }
             })

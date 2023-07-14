@@ -28,7 +28,7 @@ struct CameraViewTesting: View {
                     VStack {
                         Spacer()
                         if camera.timerCounter < 15 {
-                            Image("right_handsup").resizable()
+                            Image("right_handsdown").resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: screenSize.size.width, height: screenSize.size.height*4/5)
                         } else {
